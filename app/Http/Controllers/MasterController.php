@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\master;
 use App\tb_outlet;
+use DB;
 
 class MasterController extends Controller
 {

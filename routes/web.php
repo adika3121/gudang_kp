@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/tes', 'MasterController@index');
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 Auth::routes();
 

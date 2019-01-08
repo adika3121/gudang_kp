@@ -22,6 +22,6 @@ class master extends Model
     }
 
     protected $fillable = [
-      'kode_master', 'kode_outlet', 'kategori', 'kode_pn', 'merek', 'nama_barang', 'stock_masuk', 'stock_keluar', 'sisa_stock', 'keterangan'
+       'kode_outlet', 'kategori', 'kode_pn', 'merek', 'nama_barang', 'stock_masuk', 'stock_keluar', 'sisa_stock', 'keterangan'
     ];
 }
