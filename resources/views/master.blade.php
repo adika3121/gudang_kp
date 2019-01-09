@@ -1,5 +1,9 @@
 @extends('layout.layout')
 
+@section('master')
+  active
+@endsection
+
 @section('content')
 
             <!-- MAIN CONTENT-->
@@ -41,6 +45,7 @@
                                             </tr>
                                             @endforeach
                                         </tbody>
+
                                     </table>
                                 </div>
                             </div>
