@@ -89,16 +89,16 @@
                                 <i class="fas fa-copy"></i>Lainnya</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="login.html">Tambah Kategori</a>
+                                    <a href="/kategori">Kategori</a>
                                 </li>
                                 <li>
-                                    <a href="register.html">Tambah Merk</a>
+                                    <a href="/merk">Merk</a>
                                 </li>
                                 <li>
-                                    <a href="forget-pass.html">Tambah Vendor</a>
+                                    <a href="/tambah-vendor">Vendor</a>
                                 </li>
                                 <li>
-                                    <a href="forget-pass.html">Tambah Outlet</a>
+                                    <a href="/outlet">Outlet</a>
                                 </li>
                             </ul>
                         </li>
@@ -193,16 +193,16 @@
                                 <i class="fas fa-copy"></i>Lainnya</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="login.html">Tambah Kategori</a>
+                                    <a href="/kategori">Kategori</a>
                                 </li>
                                 <li>
-                                    <a href="register.html">Tambah Merk</a>
+                                    <a href="/merk">Merk</a>
                                 </li>
                                 <li>
-                                    <a href="forget-pass.html">Tambah Vendor</a>
+                                    <a href="/tambah-vendor">Vendor</a>
                                 </li>
                                 <li>
-                                    <a href="forget-pass.html">Tambah Outlet</a>
+                                    <a href="/outlet">Outlet</a>
                                 </li>
                             </ul>
                         </li>

@@ -32,20 +32,22 @@
                                         <strong>Tambahkan Kategori</strong>
                                     </div>
                                     <div class="card-body card-block">
-                                        <form action="" method="post" class="">
+                                        <form action="{{action('TbKategoriController@store')}}" method="post" class="">
+                                        {{ csrf_field() }}
                                             <div class="form-group">
                                                 <label for="nf-email" class=" form-control-label">Nama Kategori</label>
-                                                <input type="text" id="nf-email" name="nf-email" placeholder="Masukkan nama merk.." class="form-control">
+                                                <input type="text" id="nf-email" name="nama_kategori" placeholder="Masukkan nama merk.." class="form-control">
                                             </div>
+                                            <button type="submit" class="btn btn-primary btn-sm">
+                                                <i class="fa fa-dot-circle-o"></i> Simpan
+                                            </button>
+                                            <button type="reset" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-ban"></i> Batal
+                                            </button>
                                         </form>
                                     </div>
                                     <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-dot-circle-o"></i> Simpan
-                                        </button>
-                                        <button type="reset" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-ban"></i> Batal
-                                        </button>
+                                        
                                     </div>
                                 </div>
                         </div>

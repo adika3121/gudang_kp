@@ -24,11 +24,7 @@ class MasterController extends Controller
         return view('index2');
     }
 
-    public function kategori()
-    {
-        $tampilKategori = tb_kategori::all();
-        return view('tambah_kategori', compact('tampilKategori'));
-    }
+    
 
     public function merk()
     {

@@ -35,7 +35,7 @@ class TbMerekController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
