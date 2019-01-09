@@ -105,6 +105,14 @@
                                         </div>
                                     </div>
                                     <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="text-input" class=" form-control-label">Nama Barang</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input type="text" id="nama_barang" name="nama_barang" placeholder="Nama Barang" class="form-control">
+                                            </div>
+                                        </div>
+                                    <div class="row form-group">
                                         <div class="col col-md-3">
                                             <label for="select" class=" form-control-label">Merk</label>
                                         </div>

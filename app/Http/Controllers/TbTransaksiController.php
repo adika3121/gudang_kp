@@ -37,6 +37,7 @@ class TbTransaksiController extends Controller
         $master->outlet = $request->kode_outlet;
         $master->kategori = $request->kategori;
         $master->kode_pn = $request->kode_pn;
+        $master->nama_barang = $request->nama_barang;
         $master->merk = $request->merek;
         $master->save();
         return redirect("/");
