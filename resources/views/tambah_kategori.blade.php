@@ -16,22 +16,11 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                             @foreach($tampilKategori as $tp_ktgr)
                                             <tr>
-                                                <td>2018-09-29 05:57</td>
+                                                <td>{{$tp_ktgr->nama_kategori}}</td>
                                             </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-27 02:12</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-26 23:06</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-25 19:03</td>
-                                            </tr>
-                                            <tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

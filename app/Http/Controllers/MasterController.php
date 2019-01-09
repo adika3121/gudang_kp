@@ -7,6 +7,7 @@ use App\master;
 use App\tb_outlet;
 use App\tb_merek;
 use App\tb_kategori;
+use App\tb_vendor;
 use DB;
 
 class MasterController extends Controller
@@ -23,19 +24,28 @@ class MasterController extends Controller
         return view('index2');
     }
 
-    public function kategori(){
-        return view('tambah_kategori');
+    public function kategori()
+    {
+        $tampilKategori = tb_kategori::all();
+        return view('tambah_kategori', compact('tampilKategori'));
     }
 
-    public function merk(){
-        return view('tambah_merk');
+    public function merk()
+    {
+        $tampilMerk = tb_merek::all();
+        return view('tambah_merk', compact('tampilMerk'));
     }
 
-    public function vendor(){
-        return view('tambah_vendor');
+    public function vendor()
+    {
+         $tampilVendor = tb_vendor::all();
+         return view('tambah_vendor', compact('tampilVendor'));
     }
-    public function outlet(){
-        return view('tambah_outlet');
+    public function outlet()
+    {
+        $tampilOutlet = tb_outlet::all();
+
+        return view('tambah_outlet', compact('tampilOutlet'));
     }
 
     /**
