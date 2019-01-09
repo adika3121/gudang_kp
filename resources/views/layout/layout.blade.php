@@ -428,6 +428,21 @@
             <!-- HEADER DESKTOP-->
 
             @yield('content')
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright" style="text-align= text-center;">
+                        <p>Copyright © 2018 Kerja Praktek TI Udayana . All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MAIN CONTENT-->
+<!-- END PAGE CONTAINER-->
+</div>
+
+</div>
             <!-- Jquery JS-->
     <script src="{{asset('vendor/jquery-3.2.1.min.js')}}"></script>
     <!-- Bootstrap JS-->
