@@ -13,6 +13,14 @@ class master extends Model
       return $this->belongsTo('App\tb_outlet', 'kode_outlet');
     }
 
+    public function tb_merek(){
+      return $this->belongsTo('App\tb_merek', 'merek');
+    }
+
+    public function tb_kategori(){
+      return $this->belongsTo('App\tb_kategori', 'kategori');
+    }
+
     public function tb_stock_keluar(){
       return $this->hasMany('App\tb_stock_keluar');
     }
@@ -22,6 +30,6 @@ class master extends Model
     }
 
     protected $fillable = [
-       'kode_outlet', 'kategori', 'kode_pn', 'merek', 'nama_barang', 'stock_masuk', 'stock_keluar', 'sisa_stock', 'keterangan'
+       'kode_master', 'kode_outlet', 'kategori', 'kode_pn', 'merek', 'nama_barang', 'stock_masuk', 'stock_keluar', 'sisa_stock', 'keterangan'
     ];
 }

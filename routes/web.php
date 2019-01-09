@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/dataBarang', 'MasterController@index');
+Route::resource('/barang', 'MasterController');
 Route::get('/', 'MasterController@home');
 Route::get('/master', 'MasterController@index');
 // Route::get('/', function () {
