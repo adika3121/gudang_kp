@@ -20,6 +20,21 @@ class MasterController extends Controller
         return view('index2');
     }
 
+    public function kategori(){
+        return view('tambah_kategori');
+    }
+
+    public function merk(){
+        return view('tambah_merk');
+    }
+
+    public function vendor(){
+        return view('tambah_vendor');
+    }
+    public function outlet(){
+        return view('tambah_outlet');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
