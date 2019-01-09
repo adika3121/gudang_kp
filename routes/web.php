@@ -14,6 +14,7 @@
 Route::get('/dataBarang', 'MasterController@index');
 Route::resource('/barang', 'MasterController');
 Route::resource('/kategori', 'TbKategoriController');
+Route::resource('/transaksi', 'TbTransaksiController');
 Route::get('/', 'MasterController@home');
 Route::get('/master', 'MasterController@index');
 Route::get('/merk', 'MasterController@merk');
