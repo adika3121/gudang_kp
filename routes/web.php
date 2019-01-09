@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/tes', 'MasterController@index');
-Route::get('/', 'MasterController@tesTampilan');
+Route::get('/dataBarang', 'MasterController@index');
+Route::resource('/barang', 'MasterController');
+Route::get('/', 'MasterController@home');
+Route::get('/master', 'MasterController@index');
 Route::get('/kategori', 'MasterController@kategori');
 Route::get('/merk', 'MasterController@merk');
 Route::get('/tambah-vendor', 'MasterController@vendor');
 Route::get('/outlet', 'MasterController@outlet');
-
 // Route::get('/', function () {
 //     return view('index');
 // });

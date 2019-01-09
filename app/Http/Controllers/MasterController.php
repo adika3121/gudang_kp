@@ -5,18 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\master;
 use App\tb_outlet;
+use App\tb_merek;
+use App\tb_kategori;
 use DB;
 
 class MasterController extends Controller
 {
     public function index()
     {
-        $tampilBarang = master::with('tb_outlet')
+        $tampilBarang = master::with('tb_outlet','tb_merek', 'tb_kategori')
                         ->get();
-        return view('testBarang', compact('tampilBarang'));
+        // $tampilBRG = DB
+        return view('master', compact('tampilBarang'));
     }
 
-    public function tesTampilan(){
+    public function home(){
         return view('index2');
     }
 

@@ -43,7 +43,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="{{asset('images/icon/logo.png')}}" alt="CoolAdmin" />
+                            <img src="{{asset('images/icon/by.jpg')}}" alt="Baliyoni" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -72,7 +72,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="chart.html">
+                            <a href="/master">
                                 <i class="fas fa-chart-bar"></i>Master Data</a>
                         </li>
                         <li>
@@ -83,7 +83,7 @@
                             <a href="form.html">
                                 <i class="far fa-check-square"></i>Stock Keluar</a>
                         </li>
-                        
+
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Lainnya</a>
@@ -151,13 +151,13 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="{{asset('images/icon/logo.png')}}" alt="Cool Admin" />
+                    <img src="{{asset('images/icon/by.jpg')}}" alt="Baliyoni" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
+                        <li class="@yield('dashboard') has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -175,20 +175,20 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="chart.html">
+                        <li class="@yield('master')">
+                            <a href="/master">
                                 <i class="fas fa-chart-bar"></i>Master Data</a>
                         </li>
-                        <li>
+                        <li class="@yield('transaksi')">
                             <a href="table.html">
                                 <i class="fas fa-table"></i>Transaksi</a>
                         </li>
-                        <li>
+                        <li class="@yield('stock_keluar')">
                             <a href="form.html">
                                 <i class="far fa-check-square"></i>Stock Keluar</a>
                         </li>
-                        
-                        <li class="has-sub">
+
+                        <li class="@yield('active') has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Lainnya</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -206,7 +206,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="has-sub">
+                        <li class="@yield('active') has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-desktop"></i>UI Elements</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
