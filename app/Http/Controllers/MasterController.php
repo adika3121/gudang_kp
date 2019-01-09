@@ -16,6 +16,10 @@ class MasterController extends Controller
         return view('testBarang', compact('tampilBarang'));
     }
 
+    public function tesTampilan(){
+        return view('index2');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

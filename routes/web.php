@@ -12,6 +12,7 @@
 */
 
 Route::get('/tes', 'MasterController@index');
+Route::get('/', 'MasterController@tesTampilan');
 // Route::get('/', function () {
 //     return view('index');
 // });
