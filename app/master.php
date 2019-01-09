@@ -14,11 +14,11 @@ class master extends Model
     }
 
     public function tb_merek(){
-      return $this->belongsTo('App\tb_merek', 'kode_merek');
+      return $this->belongsTo('App\tb_merek', 'merek');
     }
 
     public function tb_kategori(){
-      return $this->belongsTo('App\tb_kategori', 'kode_kategori');
+      return $this->belongsTo('App\tb_kategori', 'kategori');
     }
 
     public function tb_stock_keluar(){

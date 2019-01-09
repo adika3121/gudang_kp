@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/tes', 'MasterController@index');
+Route::get('/dataBarang', 'MasterController@index');
 Route::get('/', 'MasterController@tesTampilan');
+Route::resource('/barang', 'MasterController');
 // Route::get('/', function () {
 //     return view('index');
 // });
