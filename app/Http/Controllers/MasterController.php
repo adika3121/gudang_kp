@@ -24,7 +24,6 @@ class MasterController extends Controller
         return view('index2');
     }
 
-<<<<<<< HEAD
 
 
     public function merk()
@@ -44,8 +43,6 @@ class MasterController extends Controller
 
         return view('tambah_outlet', compact('tampilOutlet'));
     }
-=======
->>>>>>> 3a9d6f60e2a90307af1099bbac62dd641ffe9ff4
 
     /**
      * Show the form for creating a new resource.
