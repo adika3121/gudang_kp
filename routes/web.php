@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/tes', 'MasterController@index');
-Route::get('/', 'MasterController@tesTampilan');
+Route::get('/', 'MasterController@home');
+Route::get('/master', 'MasterController@index');
 // Route::get('/', function () {
 //     return view('index');
 // });

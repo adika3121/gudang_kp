@@ -13,10 +13,10 @@ class MasterController extends Controller
     {
         $tampilBarang = master::with('tb_outlet')
                         ->get();
-        return view('testBarang', compact('tampilBarang'));
+        return view('master', compact('tampilBarang'));
     }
 
-    public function tesTampilan(){
+    public function home(){
         return view('index2');
     }
 
