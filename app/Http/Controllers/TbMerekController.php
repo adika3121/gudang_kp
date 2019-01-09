@@ -14,7 +14,8 @@ class TbMerekController extends Controller
      */
     public function index()
     {
-        //
+        $tampilMerk = tb_merek::all();
+        return view('tambah_merk', compact('tampilMerk'));
     }
 
     /**
@@ -35,7 +36,13 @@ class TbMerekController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->validate($request,[
+            'nama_merek'=>'required']);
+
+        $merk = new tb_merek();
+        $merk -> nama_merek = $request -> nama_merek;
+        $merk->save();
+        return redirect('/merk');
     }
 
     /**

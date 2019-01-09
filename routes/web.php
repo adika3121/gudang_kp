@@ -14,11 +14,11 @@
 Route::get('/dataBarang', 'MasterController@index');
 Route::resource('/barang', 'MasterController');
 Route::resource('/kategori', 'TbKategoriController');
+Route::resource('/merk', 'TbMerekController');
+Route::resource('/tambah-vendor', 'TbVendorController');
+Route::resource('/outlet', 'TbOutletController');
 Route::get('/', 'MasterController@home');
 Route::get('/master', 'MasterController@index');
-Route::get('/merk', 'MasterController@merk');
-Route::get('/tambah-vendor', 'MasterController@vendor');
-Route::get('/outlet', 'MasterController@outlet');
 Route::get('/transaksi', 'TbTransaksiController@create')->name('transaksi');
 // Route::get('/', function () {
 //     return view('index');
