@@ -26,7 +26,8 @@
                                                 <th class="text-right">Stock Masuk</th>
                                                 <th class="text-right">Stock Keluar</th>
                                                 <th class="text-right">Stock Gudang</th>
-                                                <th>Keterangan</th>
+                                                <th>Catatan</th>
+                                                <th>Ket</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -41,7 +42,11 @@
                                                 <td class="text-right">{{$tp_brg->stock_masuk}}</td>
                                                 <td class="text-right">{{$tp_brg->stock_keluar}}</td>
                                                 <td class="text-right">{{$tp_brg->sisa_stock}}</td>
-                                                <td></td>
+                                                <td>{{$tp_brg->keterangan}}</td>
+                                                <td><a href="" class="btn btn-outline-warning">
+                                                        <i class="fa fa-edit"></i></a>
+                                                        <a href="" class="btn btn-outline-danger">
+                                                                <i class="fa fa-trash"></i></a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
