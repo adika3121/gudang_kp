@@ -24,7 +24,7 @@ class MasterController extends Controller
         return view('index2');
     }
 
-    
+
 
     public function merk()
     {
@@ -61,7 +61,7 @@ class MasterController extends Controller
      */
     public function store()
     {
-        //
+        
     }
 
     /**
