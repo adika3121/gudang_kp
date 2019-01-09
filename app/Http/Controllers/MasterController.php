@@ -19,7 +19,7 @@ class MasterController extends Controller
         return view('testBarang', compact('tampilBarang'));
     }
 
-    public function tesTampilan(){
+    public function home(){
         return view('index2');
     }
 
