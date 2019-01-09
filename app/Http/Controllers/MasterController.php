@@ -32,17 +32,40 @@ class MasterController extends Controller
      */
     public function create()
     {
-        //
+        $outlet = tb_outlet::all();
+        $merk = tb_merek::all();
+        $kategori = tb_kategori::all();
+        return view('tambahbarang', compact('outlet', 'merk', 'kategori'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        //
+        // $this->validate($request,[
+        //     'nomor' => 'required',
+        //     'member' => 'required',
+        //     'kasir' => 'required',
+        //     'tanggal'=> 'required'
+        //     ]);
+        
+        $master = new master();
+        $outlet = $request->outlet;
+        $kode_pn = $request->kode_pn;
+        $nama_barang = $request->nama_barang;
+        $kode_master = $outlet . $kode_pn . $nama_barang;
+        $master->kode_outlet = $request->outlet;
+        $master->kategori = $request->kategori;
+        $master->kode_pn = $request->kode_pn;
+        $master->nama_barang = $request->nama_barang;
+        $master->merek = $request->merk;
+        $master->kode_master = $kode_master;
+        $master->save();
+        return redirect("/");
     }
 
     /**

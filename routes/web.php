@@ -19,7 +19,9 @@ Route::resource('/tambah-vendor', 'TbVendorController');
 Route::resource('/outlet', 'TbOutletController');
 Route::get('/', 'MasterController@home');
 Route::get('/master', 'MasterController@index');
-Route::get('/transaksi', 'TbTransaksiController@create')->name('transaksi');
+Route::get('/tambah-barang', 'MasterController@create')->name('tambahbarang');
+// Route::get('/transaksi', 'TbTransaksiController@create')->name('transaksi');
+
 // Route::get('/', function () {
 //     return view('index');
 // });
