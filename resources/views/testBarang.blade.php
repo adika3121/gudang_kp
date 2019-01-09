@@ -25,9 +25,9 @@
         <tr>
           <td>{{$tp_brg->kode_master}}</td>
           <td>{{$tp_brg->kode_outlet}}</td>
-          <td>{{$tp_brg->kategori}}</td>
+          <td>{{$tp_brg->tb_kategori->nama_kategori}}</td>
           <td>{{$tp_brg->kode_pn}}</td>
-          <td>{{$tp_brg->merek}}</td>
+          <td>{{$tp_brg->tb_merek->nama_merek}}</td>
           <td>{{$tp_brg->nama_barang}}</td>
           <td>{{$tp_brg->stock_masuk}}</td>
           <td>{{$tp_brg->stock_keluar}}</td>
@@ -37,5 +37,6 @@
         @endforeach
       </tbody>
     </table>
+
   </body>
 </html>
