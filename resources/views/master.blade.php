@@ -30,22 +30,22 @@
                                             <tr>
                                                 <td>{{$tp_brg->kode_master}}</td>
                                                 <td>{{$tp_brg->kode_outlet}}</td>
-                                                <td>{{$tp_brg->kategori}}</td>
+                                                <td>{{$tp_brg->tb_kategori['nama_kategori']}}</td>
                                                 <td>{{$tp_brg->kode_pn}}</td>
-                                                <td>{{$tp_brg->merek}}</td>
+                                                <td>{{$tp_brg->tb_merek['nama_merek']}}</td>
                                                 <td>{{$tp_brg->nama_barang}}</td>
                                                 <td class="text-right">{{$tp_brg->stock_masuk}}</td>
                                                 <td class="text-right">{{$tp_brg->stock_keluar}}</td>
                                                 <td class="text-right">{{$tp_brg->sisa_stock}}</td>
                                                 <td></td>
                                             </tr>
-                                            @endforeach 
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            
-                        
+
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
@@ -62,4 +62,3 @@
 
     </div>
 @endsection
-    

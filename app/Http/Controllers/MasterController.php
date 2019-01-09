@@ -16,7 +16,7 @@ class MasterController extends Controller
         $tampilBarang = master::with('tb_outlet','tb_merek', 'tb_kategori')
                         ->get();
         // $tampilBRG = DB
-        return view('testBarang', compact('tampilBarang'));
+        return view('master', compact('tampilBarang'));
     }
 
     public function home(){
