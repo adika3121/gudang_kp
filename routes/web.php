@@ -14,13 +14,10 @@
 Route::get('/dataBarang', 'MasterController@index');
 Route::resource('/barang', 'MasterController');
 Route::resource('/kategori', 'TbKategoriController');
-<<<<<<< HEAD
 Route::resource('/transaksi', 'TbTransaksiController');
-=======
 Route::resource('/merk', 'TbMerekController');
 Route::resource('/tambah-vendor', 'TbVendorController');
 Route::resource('/outlet', 'TbOutletController');
->>>>>>> 3a9d6f60e2a90307af1099bbac62dd641ffe9ff4
 Route::get('/', 'MasterController@home');
 Route::get('/master', 'MasterController@index');
 Route::get('/tambah-barang', 'MasterController@create')->name('tambahbarang');
