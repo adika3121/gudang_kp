@@ -14,7 +14,8 @@ class TbKategoriController extends Controller
      */
     public function index()
     {
-        //
+        $tampilKategori = tb_kategori::all();
+        return view('tambah_kategori', compact('tampilKategori'));
     }
 
     /**
@@ -35,7 +36,13 @@ class TbKategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nama_kategori'=>'required']);
+
+        $kategori = new tb_kategori();
+        $kategori -> nama_kategori = $request -> nama_kategori;
+        $kategori->save();
+        return redirect('/kategori');
     }
 
     /**
