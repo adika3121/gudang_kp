@@ -52,7 +52,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                <button class="au-btn au-btn-icon au-btn--green au-btn--small" onclick="window.location='{{ route("transaksi") }}'">
                                         <i class="zmdi zmdi-plus"></i>Tambah Barang</button>
                             </div>
 
