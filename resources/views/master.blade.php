@@ -12,8 +12,8 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div style="width:100%;">
-                                <h2 class="title-1 m-b-25">Items</h2>
-                                <div class="table-responsive table--no-card m-b-80">
+                                <h2 class="title-1 m-b-25">Master Barang</h2>
+                                <div class="table-responsive table--no-card m-b-20">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
@@ -45,25 +45,12 @@
                                             </tr>
                                             @endforeach
                                         </tbody>
-
                                     </table>
                                 </div>
+                                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                        <i class="zmdi zmdi-plus"></i>Tambah Barang</button>
                             </div>
 
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END MAIN CONTENT-->
-            <!-- END PAGE CONTAINER-->
-        </div>
 
-    </div>
 @endsection
