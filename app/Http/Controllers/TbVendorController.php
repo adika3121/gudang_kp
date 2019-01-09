@@ -14,7 +14,8 @@ class TbVendorController extends Controller
      */
     public function index()
     {
-        //
+        $tampilVendor = tb_vendor::all();
+        return view('tambah_vendor', compact('tampilVendor'));
     }
 
     /**
@@ -35,7 +36,17 @@ class TbVendorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nama_vendor'=>'required',
+            'alamat'=>'required',
+            'no_telp'=>'required']);
+
+        $vendor = new tb_vendor();
+        $vendor -> nama_vendor = $request -> nama_vendor;
+        $vendor -> alamat = $request -> alamat;
+        $vendor -> no_telp = $request -> no_telp;
+        $vendor->save();
+        return redirect('/tambah-vendor');
     }
 
     /**

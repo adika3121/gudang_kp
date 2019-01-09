@@ -36,47 +36,35 @@
                                         <strong>Tambahkan Vendor</strong>
                                     </div>
                                     <div class="card-body card-block">
-                                        <form action="" method="post" class="">
+                                        <form action="{{action('TbVendorController@store')}}" method="post" class="">
+                                        {{ csrf_field() }}
                                             <div class="form-group">
                                                 <label for="nf-email" class=" form-control-label">Nama Vendor</label>
-                                                <input type="text" id="nf-email" name="nf-email" placeholder="Masukkan nama vendor.." class="form-control">
+                                                <input type="text" id="nf-email" name="nama_vendor" placeholder="Masukkan nama vendor.." class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label for="nf-email" class=" form-control-label">Alamat Vendor</label>
-                                                <input type="text" id="nf-email" name="nf-email" placeholder="Masukkan alamat vendor.." class="form-control">
+                                                <input type="text" id="nf-email" name="alamat" placeholder="Masukkan alamat.." class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label for="nf-email" class=" form-control-label">No HP</label>
-                                                <input type="text" id="nf-email" name="nf-email" placeholder="Masukkan No HP vendor.." class="form-control">
+                                                <input type="text" id="nf-email" name="no_telp" placeholder="Masukkan no. telp.." class="form-control">
                                             </div>
+                                            <button type="submit" class="btn btn-primary btn-sm">
+                                                <i class="fa fa-dot-circle-o"></i> Simpan
+                                            </button>
+                                            <button type="reset" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-ban"></i> Batal
+                                            </button>
                                         </form>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-dot-circle-o"></i> Simpan
-                                        </button>
-                                        <button type="reset" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-ban"></i> Batal
-                                        </button>
                                     </div>
                                 </div>
                         </div>
                    
                         </div>
                         </div>
-                        
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="copyright">
-                                    <p>Copyright © 2019 Kerja Praktek TI Unud. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-    </div>
+    
 
 @endsection
