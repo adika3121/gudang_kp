@@ -431,7 +431,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="copyright" style="text-align= text-center;">
-                        <p>Copyright © 2019 Kerja Praktek TI Udayana . All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                        <p>Copyright © 2019 Kerja Praktek TI Udayana . All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p> 
                     </div>
                 </div>
             </div>
