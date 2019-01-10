@@ -28,7 +28,7 @@
                                             @endif
                                             </select>
                                         </div>
-                                        
+
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3">
@@ -46,7 +46,7 @@
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3">
-                                            <label for="text-input" class=" form-control-label">Product No.</label>
+                                            <label for="text-input" class=" form-control-label">Nama Barang</label>
                                         </div>
                                         <div class="col-12 col-md-9">
                                             <input type="text" id="kode_pn" name="kode_pn" placeholder="Kode PN" class="form-control">
@@ -72,14 +72,14 @@
                                                 @endforeach
                                             @endif
                                             </select>
-                                        </div>                                            
+                                        </div>
                                     </div>
-                                      
+
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit
                                         </button>
-                                        
+
                                         <button type="reset" class="btn btn-danger btn-sm">
                                             <i class="fa fa-ban"></i> Reset
                                         </button>
@@ -87,9 +87,9 @@
                                 </form>
                         </div>
                         {{--  </form>  --}}
-                        
-                    
-                
+
+
+
             </div>
         </div>
     </div>
@@ -98,4 +98,3 @@
     </div>
 
 @endsection
-    
