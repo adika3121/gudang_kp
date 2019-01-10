@@ -104,9 +104,11 @@ class MasterController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit(Request $request)
+    public function edit(Request $request, $kode_master)
     {
-        //
+        $this->validate($request,[
+          
+        ]);
     }
 
     /**
