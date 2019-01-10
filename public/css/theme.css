@@ -4227,9 +4227,9 @@ section {
 }
 
 .table-earning thead th {
-    background: #333;
+    background: rgb(211, 211, 211);
     font-size: 16px;
-    color: #fff;
+    color: #333;
     vertical-align: middle;
     font-weight: 400;
     text-transform: capitalize;
