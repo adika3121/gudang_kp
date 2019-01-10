@@ -42,7 +42,7 @@ class TbMerekController extends Controller
         $merk = new tb_merek();
         $merk -> nama_merek = $request -> nama_merek;
         $merk->save();
-        return redirect('/merk');
+        return redirect('/');
     }
 
     /**

@@ -46,7 +46,7 @@ class TbVendorController extends Controller
         $vendor -> alamat = $request -> alamat;
         $vendor -> no_telp = $request -> no_telp;
         $vendor->save();
-        return redirect('/tambah-vendor');
+        return redirect('/');
     }
 
     /**
