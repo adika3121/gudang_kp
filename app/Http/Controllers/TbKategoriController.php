@@ -42,7 +42,7 @@ class TbKategoriController extends Controller
         $kategori = new tb_kategori();
         $kategori -> nama_kategori = $request -> nama_kategori;
         $kategori->save();
-        return redirect('/kategori');
+        return redirect('/');
     }
 
     /**

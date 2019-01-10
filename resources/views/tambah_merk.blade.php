@@ -31,34 +31,34 @@
                     </div>
                 </div>
                 <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="largeModalLabel">Tambahkan Merk Baru</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    <div class="modal-body">
-                        <form action="{{action('TbMerekController@store')}}" method="post" class="">
-                            {{ csrf_field() }}
-                            <div class="form-group">
-                                <label for="nf-email" class=" form-control-label">Nama Merek</label>
-                                <input type="text" id="nf-email" name="nama_merek" placeholder="Masukkan nama merk.." class="form-control">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="largeModalLabel">Tambahkan Merk Baru</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary btn-sm">
-                                <i class="fa fa-dot-circle-o"></i> Simpan
-                            </button>
-                            <button type="reset" class="btn btn-danger btn-sm">
-                                <i class="fa fa-ban"></i> Batal
-                            </button>
-                        </div>          
-                        </form>    
+                        <div class="modal-body">
+                            <form action="{{action('TbMerekController@store')}}" method="post" class="">
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                    <label for="nf-email" class=" form-control-label">Nama Merek</label>
+                                    <input type="text" id="nf-email" name="nama_merek" placeholder="Masukkan nama merk.." class="form-control">
+                                </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-dot-circle-o"></i> Simpan
+                                </button>
+                                <button type="reset" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-ban"></i> Batal
+                                </button>
+                            </div>          
+                            </form>    
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
 
 @endsection

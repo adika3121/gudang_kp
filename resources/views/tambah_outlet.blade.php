@@ -7,7 +7,7 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
-                            <div style="width:100%;">                                <h2 class="title-1 m-b-25">Data Outlet</h2>
+                            <div style="width:100%;">
                                 <div class="table-responsive table--no-card m-b-30">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
