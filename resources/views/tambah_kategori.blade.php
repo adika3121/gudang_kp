@@ -12,7 +12,7 @@
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
-                                                <th>Nama Kategori</th>
+                                                <th>Data Kategori</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -24,41 +24,41 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <button type="button" class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#largeModal">+ Tambah Kategori
+                                </button>
                             </div>
-                           
-                        <div class="col-lg-3">
-                                <div class="card" style="center">
-                                    <div class="card-header">
-                                        <strong>Tambahkan Kategori</strong>
-                                    </div>
-                                    <div class="card-body card-block">
-                                        <form action="{{action('TbKategoriController@store')}}" method="post" class="">
-                                        {{ csrf_field() }}
-                                            <div class="form-group">
-                                                <label for="nf-email" class=" form-control-label">Nama Kategori</label>
-                                                <input type="text" id="nf-email" name="nama_kategori" placeholder="Masukkan nama merk.." class="form-control">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary btn-sm">
-                                                <i class="fa fa-dot-circle-o"></i> Simpan
-                                            </button>
-                                            <button type="reset" class="btn btn-danger btn-sm">
-                                                <i class="fa fa-ban"></i> Batal
-                                            </button>
-                                        </form>
-                                    </div>
-                                    <div class="card-footer">
-                                        
-                                    </div>
-                                </div>
                         </div>
-                   
+                    </div>
+                </div>
+                <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="largeModalLabel">Tambahkan Kategori Baru</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
+                    <div class="modal-body">
+                        <form action="{{action('TbKategoriController@store')}}" method="post" class="">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <label for="nf-email" class=" form-control-label">Nama Kategori</label>
+                                <input type="text" id="nf-email" name="nama_kategori" placeholder="Masukkan nama kategori.." class="form-control">
+                            </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fa fa-dot-circle-o"></i> Simpan
+                            </button>
+                            <button type="reset" class="btn btn-danger btn-sm">
+                                <i class="fa fa-ban"></i> Batal
+                            </button>
+                        </div>          
+                        </form>    
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    </div>
 
 @endsection

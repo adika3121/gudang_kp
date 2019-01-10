@@ -62,7 +62,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <button class="au-btn au-btn-icon au-btn--green au-btn--small" onclick="window.location='{{ route("tambahbarang") }}'">
+                                <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#largeModal">
                                         <i class="zmdi zmdi-plus"></i>Tambah Barang</button>
                             </div>
                             <div class="row">

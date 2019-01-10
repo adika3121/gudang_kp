@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\master;
 use App\tb_outlet;
+use App\tb_merek;
+use App\tb_kategori;
+use App\tb_vendor;
+use DB;
 
-class TbOutletController extends Controller
+class DataController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +19,11 @@ class TbOutletController extends Controller
      */
     public function index()
     {
+        $tampilKategori = tb_kategori::all();
+        $tampilMerk = tb_merek::all();
+        $tampilVendor = tb_vendor::all();
         $tampilOutlet = tb_outlet::all();
-        return view('tambah_outlet', compact('tampilOutlet'));
+        return view('datalain', compact('tampilKategori', 'tampilMerk','tampilVendor','tampilOutlet'));
     }
 
     /**
@@ -36,28 +44,16 @@ class TbOutletController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-        	'kode_outlet'=>'required',
-            'nama_outlet'=>'required',
-            'alamat'=>'required',
-            'no_telp'=>'required']);
-
-        $outlet = new tb_outlet();
-        $outlet -> kode_outlet = $request -> kode_outlet;
-        $outlet -> nama_outlet = $request -> nama_outlet;
-        $outlet -> alamat = $request -> alamat;
-        $outlet -> no_telp = $request -> no_telp;
-        $outlet->save();
-        return redirect('/');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\tb_vendor  $tb_vendor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(tb_outlet $tb_outlet)
+    public function show($id)
     {
         //
     }
@@ -65,10 +61,10 @@ class TbOutletController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\tb_vendor  $tb_vendor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(tb_outlet $tb_outlet)
+    public function edit($id)
     {
         //
     }
@@ -77,10 +73,10 @@ class TbOutletController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\tb_vendor  $tb_vendor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tb_outlet $tb_outlet)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -88,10 +84,10 @@ class TbOutletController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\tb_vendor  $tb_vendor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tb_outlet $tb_outlet)
+    public function destroy($id)
     {
         //
     }

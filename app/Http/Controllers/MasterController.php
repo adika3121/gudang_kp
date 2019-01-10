@@ -88,7 +88,7 @@ class MasterController extends Controller
         $master->merek = $request->merk;
         $master->kode_master = $kode_master;
         $master->save();
-        return redirect("/");
+        return redirect("/master");
     }
 
     /**
