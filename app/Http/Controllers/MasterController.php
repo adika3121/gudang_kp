@@ -16,9 +16,10 @@ class MasterController extends Controller
     {
         $tampilBarang = master::with('tb_outlet','tb_merek', 'tb_kategori')
                         ->get();
+
         $outlet = tb_outlet::all();
         $merk = tb_merek::all();
-        $kategori = tb_kategori::all();               
+        $kategori = tb_kategori::all();
         // $tampilBRG = DB
         return view('master', compact('tampilBarang', 'outlet', 'merk', 'kategori'));
     }
@@ -109,9 +110,8 @@ class MasterController extends Controller
      */
     public function edit(Request $request, $kode_master)
     {
-        $this->validate($request,[
-          
-        ]);
+
+
     }
 
     /**
@@ -120,9 +120,26 @@ class MasterController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $kode_master)
     {
-        //
+        $this->validate($request,[
+          'nama_barang' => 'required'
+        ]);
+
+        $master = master::find($kode_master);
+        $outlet = $request->outlet;
+        $kode_pn = $request->kode_pn;
+        $nama_barang = $request->nama_barang;
+        $kode_master = $outlet . $kode_pn . $nama_barang;
+        $master->kode_outlet = $request->outlet;
+        $master->kategori = $request->kategori;
+        $master->kode_pn = $request->kode_pn;
+        $master->nama_barang = $request->nama_barang;
+        $master->merek = $request->merk;
+        $master->kode_master = $kode_master;
+        $master->save();
+
+        return redirect("/");
     }
 
     /**
