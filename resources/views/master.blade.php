@@ -43,7 +43,7 @@
                                                 <td class="text-right">{{$tp_brg->stock_keluar}}</td>
                                                 <td class="text-right">{{$tp_brg->sisa_stock}}</td>
                                                 <td>{{$tp_brg->keterangan}}</td>
-                                                <td><a href="" class="btn btn-outline-warning">
+                                                <td><a href="{{action('MasterController@edit', $tp_brg->kode_master)}}" class="btn btn-outline-warning">
                                                         <i class="fa fa-edit"></i></a>
                                                         <a href="" class="btn btn-outline-danger">
                                                                 <i class="fa fa-trash"></i></a></td>

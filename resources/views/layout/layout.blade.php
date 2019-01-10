@@ -180,7 +180,7 @@
                                 <i class="fas fa-chart-bar"></i>Master Data</a>
                         </li>
                         <li class="@yield('transaksi')">
-                            <a href="table.html">
+                            <a href="/transaksi">
                                 <i class="fas fa-table"></i>Transaksi</a>
                         </li>
                         <li class="@yield('stock_keluar')">

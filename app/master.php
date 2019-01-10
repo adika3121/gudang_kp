@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class master extends Model
 {
     protected $table='tb_master';
-    //protected $primaryKey='kode_master';
+    protected $primaryKey='kode_master';
+    public $incrementing = false;
 
     public function tb_outlet(){
       return $this->belongsTo('App\tb_outlet', 'kode_outlet');

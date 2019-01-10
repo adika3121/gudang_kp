@@ -28,6 +28,25 @@ class MasterController extends Controller
     }
 
 
+
+    public function merk()
+    {
+        $tampilMerk = tb_merek::all();
+        return view('tambah_merk', compact('tampilMerk'));
+    }
+
+    public function vendor()
+    {
+         $tampilVendor = tb_vendor::all();
+         return view('tambah_vendor', compact('tampilVendor'));
+    }
+    public function outlet()
+    {
+        $tampilOutlet = tb_outlet::all();
+
+        return view('tambah_outlet', compact('tampilOutlet'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -55,7 +74,7 @@ class MasterController extends Controller
         //     'kasir' => 'required',
         //     'tanggal'=> 'required'
         //     ]);
-        
+
         $master = new master();
         $outlet = $request->outlet;
         $kode_pn = $request->kode_pn;
@@ -88,9 +107,11 @@ class MasterController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit(Request $request)
+    public function edit(Request $request, $kode_master)
     {
-        //
+        $this->validate($request,[
+          
+        ]);
     }
 
     /**
