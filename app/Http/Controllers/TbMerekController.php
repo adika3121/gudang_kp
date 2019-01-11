@@ -74,9 +74,11 @@ class TbMerekController extends Controller
      * @param  \App\tb_merek  $tb_merek
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tb_merek $tb_merek)
+    public function update(Request $request)
     {
-        //
+        $merk = tb_merek::findOrFail($request->kode_merek);
+        $merk->update($request->all());
+        return back();
     }
 
     /**
@@ -85,8 +87,11 @@ class TbMerekController extends Controller
      * @param  \App\tb_merek  $tb_merek
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tb_merek $tb_merek)
+    public function destroy(Request $request)
     {
-        //
+        $merk = tb_merek::findOrFail($request->kode_merek);
+        $merk->delete();
+
+        return back();
     }
 }
