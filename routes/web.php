@@ -21,6 +21,7 @@ Route::resource('/outlet', 'TbOutletController');
 Route::resource('/lainnya', 'DataController');
 Route::get('/master', 'MasterController@index');
 Route::get('/tambah-barang', 'MasterController@create')->name('tambahbarang');
+Route::post('/tambah-stock','TbTransaksiController@outlet');
 // Route::get('/transaksi', 'TbTransaksiController@create')->name('transaksi');
 
 Route::get('/tesTampil', function () {

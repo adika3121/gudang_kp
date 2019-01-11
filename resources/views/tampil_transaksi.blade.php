@@ -63,7 +63,7 @@
 				<div class="modal-dialog modal-lg" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="largeModalLabel">Large Modal</h5>
+							<h5 class="modal-title" id="largeModalLabel">Pilih Outlet Terlebih Dahulu</h5>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -71,36 +71,27 @@
 						<div class="modal-body">
               <div class="card" style="center">
                   <div class="card-header">
-                      <strong>Tambahkan Vendor</strong>
+                      <strong>Pilih Outlet</strong>
                   </div>
+                  <form action="{{action('TbTransaksiController@create')}}" method="post" class="">
                   <div class="card-body card-block">
-                      <form action="{{action('TbVendorController@store')}}" method="post" class="">
                       {{ csrf_field() }}
                           <div class="form-group">
-                              <label for="nf-email" class=" form-control-label">Nama Vendor</label>
-                              <input type="text" id="nf-email" name="nama_vendor" placeholder="Masukkan nama vendor.." class="form-control">
+                              <label for="outlet" class=" form-control-label">Nama Outlet</label>
+                              <select class="form-control" name="outlet">
+                                <@if(count($tb_outlet->all()) > 0)
+                                    @foreach($tb_outlet->all() as $outlet)
+                                        <option value="{{$outlet->kode_outlet}}">{{$outlet->nama_outlet}}</option>
+                                    @endforeach
+                                @endif
+                              </select>
                           </div>
-                          <div class="form-group">
-                              <label for="nf-email" class=" form-control-label">Alamat Vendor</label>
-                              <input type="text" id="nf-email" name="alamat" placeholder="Masukkan alamat.." class="form-control">
-                          </div>
-                          <div class="form-group">
-                              <label for="nf-email" class=" form-control-label">No HP</label>
-                              <input type="text" id="nf-email" name="no_telp" placeholder="Masukkan no. telp.." class="form-control">
-                          </div>
-                          <button type="submit" class="btn btn-primary btn-sm">
-                              <i class="fa fa-dot-circle-o"></i> Simpan
-                          </button>
-                          <button type="reset" class="btn btn-danger btn-sm">
-                              <i class="fa fa-ban"></i> Batal
-                          </button>
-                      </form>
                   </div>
               </div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-primary">Confirm</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
+							<button type="submit" class="btn btn-primary">Lanjut</button>
 						</div>
             </form>
 					</div>
