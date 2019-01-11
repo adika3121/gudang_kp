@@ -74,9 +74,12 @@ class TbKategoriController extends Controller
      * @param  \App\tb_kategori  $tb_kategori
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tb_kategori $tb_kategori)
+    public function update(Request $request)
     {
-        //
+        $kategori = tb_kategori::findOrFail($request->kode_kategori);
+
+        $kategori->update($request->all());
+        return back();
     }
 
     /**
@@ -85,8 +88,11 @@ class TbKategoriController extends Controller
      * @param  \App\tb_kategori  $tb_kategori
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tb_kategori $tb_kategori)
+    public function destroy(Request $request)
     {
-        //
+        $kategori = tb_kategori::findOrFail($request->kode_kategori);
+        $kategori->delete();
+
+        return back();
     }
 }

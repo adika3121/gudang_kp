@@ -471,6 +471,8 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    @yield('script-js')
+    
 
 </body>
 
