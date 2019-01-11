@@ -24,6 +24,22 @@
                                                              @foreach($tampilKategori as $tp_ktgr)
                                                             <tr>
                                                                 <td>{{$tp_ktgr->nama_kategori}}</td>
+                                                                <td style="float:right;">
+                                                                    <button class="btn btn-outline-warning" data-toggle="modal"
+                                                                    data-target="#editKategori"
+                                                                    data-kategori="{{$tp_ktgr->nama_kategori}}"
+                                                                    data-catid={{$tp_ktgr->kode_kategori}} ><i class="fa fa-edit"></i></button>
+                                                                    
+                                                                    <button class="btn btn-danger" data-catid={{$tp_ktgr->kode_kategori}} data-toggle="modal" data-target="#deleteKategori"><i class="fa fa-trash"></i></button>
+                                                                    {{-- <a href="#" class="btn btn-outline-warning" data-toggle="modal"
+                                                                    data-target="#EditKategori"
+                                                                    data-kategori="{{$tp_ktgr->nama_kategori}}"
+                                                                    data-catid={{$tp_ktgr->kode_kategori}} 
+                                                                    >
+                                                                      <i class="fa fa-edit"></i></a>
+                                                                      <a href="" class="btn btn-outline-danger">
+                                                                              <i class="fa fa-trash"></i></a> --}}
+                                                                </td>
                                                             </tr>
                                                             @endforeach
                                                         </tbody>
@@ -162,6 +178,69 @@
                     </div>
                 </div>
 
+                {{-- Modal update kategori --}}
+                <div class="modal fade" id="editKategori" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="largeModalLabel">Tambahkan Kategori Baru</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{{route('kategori.update','test')}}" method="post" class="">
+                                    {{method_field('patch')}}
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label for="kode_kategori" class=" form-control-label">Nama Kategori</label>
+                                        <input type="hidden" id="kode_kategori" name="kode_kategori" value="">
+                                        <input type="text" id="nama_kategori" name="nama_kategori" class="form-control">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Simpan
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Batal
+                                        </button>
+                                    </div>          
+                                </form>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Modal delete kategori --}}
+                <div class="modal fade" id="deleteKategori" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="largeModalLabel">Tambahkan Kategori Baru</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{route('kategori.destroy','test')}}" method="post">
+                                        {{method_field('delete')}}
+                                        {{csrf_field()}}
+                                        <p class="text-center">
+                                            Are you sure you want to delete this?
+                                        </p>
+                                        <input type="hidden" id="kode_kategori" name="kode_kategori" value="">
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
+                                            <button type="submit" class="btn btn-warning">Yes, Delete</button>
+                                        </div>
+                                    </form>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 {{-- Modal Merk --}}
                 <div class="modal fade" id="ModalMerk" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
@@ -271,4 +350,35 @@
                     </div>
                 </div>
 
+                
+@endsection
+
+@section('script-js')
+<script>
+
+  
+        $('#editKategori').on('show.bs.modal', function (event) {
+
+            var button = $(event.relatedTarget) 
+            var nama_kategori = button.data('kategori')
+            var kode_kategori = button.data('catid')
+            var modal = $(this)
+      
+            modal.find('.modal-body #nama_kategori').val(nama_kategori);
+            modal.find('.modal-body #kode_kategori').val(kode_kategori);
+        })
+
+        $('#deleteKategori').on('show.bs.modal', function (event) {
+
+            var button = $(event.relatedTarget) 
+      
+            var kode_kategori = button.data('catid') 
+            var modal = $(this)
+      
+            modal.find('.modal-body #kode_kategori').val(kode_kategori);
+        })
+      
+                        
+      
+      </script>
 @endsection
