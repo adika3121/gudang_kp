@@ -46,7 +46,7 @@ class TbVendorController extends Controller
         $vendor -> alamat = $request -> alamat;
         $vendor -> no_telp = $request -> no_telp;
         $vendor->save();
-        return redirect('/');
+        return redirect('/lainnya');
     }
 
     /**
@@ -78,9 +78,12 @@ class TbVendorController extends Controller
      * @param  \App\tb_vendor  $tb_vendor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tb_vendor $tb_vendor)
+    public function update(Request $request)
     {
-        //
+        $vendor = tb_vendor::findOrFail($request->kode_vendor);
+
+        $vendor->update($request->all());
+        return back();
     }
 
     /**
@@ -89,8 +92,11 @@ class TbVendorController extends Controller
      * @param  \App\tb_vendor  $tb_vendor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tb_vendor $tb_vendor)
+    public function destroy(Request $request)
     {
-        //
+        $vendor = tb_vendor::findOrFail($request->kode_vendor);
+        $vendor->delete();
+
+        return back();
     }
 }

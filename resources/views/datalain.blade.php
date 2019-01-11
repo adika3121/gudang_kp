@@ -63,6 +63,22 @@
                                                             @foreach($tampilMerk as $tp_merk)
                                                             <tr>
                                                                 <td>{{$tp_merk->nama_merek}}</td>
+                                                                <td style="float:right;">
+                                                                    <button class="btn btn-outline-warning" data-toggle="modal"
+                                                                    data-target="#editMerk"
+                                                                    data-merk="{{$tp_merk->nama_merek}}"
+                                                                    data-idmerk={{$tp_merk->kode_merek}} ><i class="fa fa-edit"></i></button>
+                                                                    
+                                                                    <button class="btn btn-danger" data-idmerk={{$tp_merk->kode_merek}} data-toggle="modal" data-target="#deleteMerk"><i class="fa fa-trash"></i></button>
+                                                                    {{-- <a href="#" class="btn btn-outline-warning" data-toggle="modal"
+                                                                    data-target="#editMerk"
+                                                                    data-merk="{{$tp_merk->nama_merek}}"
+                                                                    data-idmerk={{$tp_merk->kode_merek}} 
+                                                                    >
+                                                                      <i class="fa fa-edit"></i></a>
+                                                                      <a href="" class="btn btn-outline-danger">
+                                                                              <i class="fa fa-trash"></i></a> --}}
+                                                                </td>
                                                             </tr>
                                                             @endforeach
                                                         </tbody>
@@ -86,6 +102,7 @@
                                                             <th>Nama Vendor</th>
                                                             <th>Alamat Vendor</th>
                                                             <th>No HP</th>
+                                                            <th></th>
                                                         </tr>
                                                     </thead>
                                                         <tbody>
@@ -94,7 +111,18 @@
                                                                 <td>{{$tp_vendor->nama_vendor}}</td>
                                                                 <td>{{$tp_vendor->alamat}}</td>
                                                                 <td>{{$tp_vendor->no_telp}}</td>
-                                                                
+
+                                                                <td style="float:right;">
+                                                                    <button class="btn btn-outline-warning" data-toggle="modal"
+                                                                    data-target="#editVendor"
+                                                                    data-namavendor="{{$tp_vendor->nama_vendor}}"
+                                                                    data-alamatvendor="{{$tp_vendor->alamat}}"
+                                                                    data-telpvendor="{{$tp_vendor->no_telp}}" 
+                                                                    data-idvendor={{$tp_vendor->kode_vendor}} ><i class="fa fa-edit"></i></button>
+                                                                    
+                                                                    <button class="btn btn-danger" data-idvendor={{$tp_vendor->kode_vendor}} data-toggle="modal" data-target="#deleteVendor"><i class="fa fa-trash"></i></button>
+                                                                    
+                                                                </td>
                                                             </tr>
                                                             @endforeach
                                                         </tbody>
@@ -113,21 +141,34 @@
                                         <h3 style="padding-top:30px; padding-bottom:10px;">Daftar Outlet</h3>
                                             <div class="table-responsive table--no-card m-b-30 table-data">
                                                 <table class="table table-borderless table-striped table-earning">
-                                                    <thead>
+                                                    <thead style="text-align: center;"> 
                                                         <tr>
                                                             <th>Kode Outlet</th>
                                                             <th>Nama Outlet</th>
                                                             <th>Alamat Outlet</th>
                                                             <th>No HP</th>
+                                                            <th></th>
                                                         </tr>
                                                     </thead>
-                                                        <tbody>
+                                                        <tbody style="text-align: center;">
                                                             @foreach($tampilOutlet as $tp_outlet)
                                                             <tr>
                                                                 <td>{{$tp_outlet->kode_outlet}}</td>
                                                                 <td>{{$tp_outlet->nama_outlet}}</td>
                                                                 <td>{{$tp_outlet->alamat}}</td>
                                                                 <td>{{$tp_outlet->no_telp}}</td>
+
+                                                                <td style="float:right;">
+                                                                    <button class="btn btn-outline-warning" data-toggle="modal"
+                                                                    data-target="#editOutlet"
+                                                                    data-namaoutlet="{{$tp_outlet->nama_outlet}}"
+                                                                    data-alamatoutlet="{{$tp_outlet->alamat}}"
+                                                                    data-telpoutlet="{{$tp_outlet->no_telp}}" 
+                                                                    data-idoutlet={{$tp_outlet->kode_outlet}} ><i class="fa fa-edit"></i></button>
+                                                                    
+                                                                    <button class="btn btn-danger" data-idoutlet={{$tp_outlet->kode_outlet}} data-toggle="modal" data-target="#deleteOutlet"><i class="fa fa-trash"></i></button>
+                                                                    
+                                                                </td>
                                                             </tr>
                                                             @endforeach
                                                         </tbody>
@@ -264,6 +305,69 @@
                     </div>
                 </div>
 
+                {{-- Modal update merk --}}
+                <div class="modal fade" id="editMerk" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="largeModalLabel">Edit Merk</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{{route('merk.update','test')}}" method="post" class="">
+                                    {{method_field('patch')}}
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label for="kode_merek" class=" form-control-label">Nama Merk</label>
+                                        <input type="hidden" id="kode_merek" name="kode_merek" value="">
+                                        <input type="text" id="nama_merek" name="nama_merek" class="form-control">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Simpan
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-refresh"></i> Reset
+                                        </button>
+                                    </div>          
+                                </form>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Modal delete merk --}}
+                <div class="modal fade" id="deleteMerk" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="largeModalLabel">Hapus Merk</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{route('merk.destroy','test')}}" method="post">
+                                        {{method_field('delete')}}
+                                        {{csrf_field()}}
+                                        <p class="text-center">
+                                            Are you sure you want to delete this?
+                                        </p>
+                                        <input type="hidden" id="kode_merek" name="kode_merek" value="">
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
+                                            <button type="submit" class="btn btn-warning">Yes, Delete</button>
+                                        </div>
+                                    </form>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 {{-- Modal Vendor --}}
                 <div class="modal fade" id="ModalVendor" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
@@ -300,6 +404,79 @@
                         </div>
                     </div>
                 </div>
+
+                {{-- Modal update vendor --}}
+                <div class="modal fade" id="editVendor" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="largeModalLabel">Edit Vendor</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{{route('datavendor.update','test')}}" method="post" class="">
+                                    {{method_field('patch')}}
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label for="kode_vendor" class=" form-control-label">Nama Vendor</label>
+                                        <input type="hidden" id="kode_vendor" name="kode_vendor" value="">
+                                        <input type="text" id="nama_vendor" name="nama_vendor" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="kode_vendor" class=" form-control-label">Alamat</label>
+                                        <input type="hidden" id="kode_vendor" name="kode_vendor" value="">
+                                        <input type="text" id="alamat" name="alamat" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="kode_vendor" class=" form-control-label">No Telp</label>
+                                        <input type="hidden" id="kode_vendor" name="kode_vendor" value="">
+                                        <input type="text" id="no_telp" name="no_telp" class="form-control">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Simpan
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-refresh"></i> Reset
+                                        </button>
+                                    </div>          
+                                </form>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Modal delete vendor --}}
+                <div class="modal fade" id="deleteVendor" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="largeModalLabel">Hapus Vendor</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{route('datavendor.destroy','test')}}" method="post">
+                                        {{method_field('delete')}}
+                                        {{csrf_field()}}
+                                        <p class="text-center">
+                                            Are you sure you want to delete this?
+                                        </p>
+                                        <input type="hidden" id="kode_vendor" name="kode_vendor" value="">
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
+                                            <button type="submit" class="btn btn-warning">Yes, Delete</button>
+                                        </div>
+                                    </form>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 {{-- Modal outlet --}}
                 <div class="modal fade" id="ModalOutlet" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
@@ -342,6 +519,81 @@
                     </div>
                 </div>
 
+                {{-- Modal update outlet --}}
+                <div class="modal fade" id="editOutlet" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="largeModalLabel">Edit Outlet</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{{route('outlet.update','test')}}" method="post" class="">
+                                    {{method_field('patch')}}
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label for="kode_outlet" class=" form-control-label">Kode Outlet</label>                                        
+                                        <input type="hidden" id="kode_outlet" name="kode_outlet" value="">
+                                        <input type="text" id="kode_outlet" name="kode_outlet" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nama_outlet" class=" form-control-label">Nama Outlet</label>
+                                        <input type="text" id="nama_outlet" name="nama_outlet" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="alamat_outlet" class=" form-control-label">Alamat</label>
+                                        <input type="text" id="alamat" name="alamat" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="no_outlet" class=" form-control-label">No Telp</label>
+                                        <input type="text" id="no_telp" name="no_telp" class="form-control">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Simpan
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-refresh"></i> Reset
+                                        </button>
+                                    </div>          
+                                </form>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Modal delete outlet --}}
+                <div class="modal fade" id="deleteOutlet" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="largeModalLabel">Hapus Outlet</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{route('outlet.destroy','test')}}" method="post">
+                                        {{method_field('delete')}}
+                                        {{csrf_field()}}
+                                        <p class="text-center">
+                                            Are you sure you want to delete this?
+                                        </p>
+                                        <input type="hidden" id="kode_outlet" name="kode_outlet" value="">
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
+                                            <button type="submit" class="btn btn-warning">Yes, Delete</button>
+                                        </div>
+                                    </form>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 
 @endsection
 
@@ -368,6 +620,77 @@
             var modal = $(this)
       
             modal.find('.modal-body #kode_kategori').val(kode_kategori);
+        })
+
+        $('#editMerk').on('show.bs.modal', function (event) {
+
+            var button = $(event.relatedTarget) 
+            var nama_merek = button.data('merk')
+            var kode_merek = button.data('idmerk')
+            var modal = $(this)
+      
+            modal.find('.modal-body #nama_merek').val(nama_merek);
+            modal.find('.modal-body #kode_merek').val(kode_merek);
+        })
+
+        $('#deleteMerk').on('show.bs.modal', function (event) {
+
+            var button = $(event.relatedTarget) 
+      
+            var kode_merek = button.data('idmerk') 
+            var modal = $(this)
+      
+            modal.find('.modal-body #kode_merek').val(kode_merek);
+        })
+
+        $('#editVendor').on('show.bs.modal', function (event) {
+
+            var button = $(event.relatedTarget) 
+            var nama_vendor = button.data('namavendor')
+            var alamat = button.data('alamatvendor')
+            var telp = button.data('telpvendor')
+            var kode_vendor = button.data('idvendor')
+            var modal = $(this)
+      
+            modal.find('.modal-body #nama_vendor').val(nama_vendor);
+            modal.find('.modal-body #kode_vendor').val(kode_vendor);
+            modal.find('.modal-body #alamat').val(alamat);
+            modal.find('.modal-body #no_telp').val(telp);
+        })
+
+        $('#deleteVendor').on('show.bs.modal', function (event) {
+
+            var button = $(event.relatedTarget) 
+      
+            var kode_vendor = button.data('idvendor') 
+            var modal = $(this)
+      
+            modal.find('.modal-body #kode_vendor').val(kode_vendor);
+        })
+
+        $('#editOutlet').on('show.bs.modal', function (event) {
+
+            var button = $(event.relatedTarget) 
+            var nama_outlet = button.data('namaoutlet')
+            var alamat = button.data('alamatoutlet')
+            var telp = button.data('telpoutlet')
+            var kode_outlet = button.data('idoutlet')
+            var modal = $(this)
+      
+            modal.find('.modal-body #nama_outlet').val(nama_outlet);
+            modal.find('.modal-body #kode_outlet').val(kode_outlet);
+            modal.find('.modal-body #alamat').val(alamat);
+            modal.find('.modal-body #no_telp').val(telp);
+        })
+
+        $('#deleteOutlet').on('show.bs.modal', function (event) {
+
+            var button = $(event.relatedTarget) 
+      
+            var kode_outlet = button.data('idoutlet') 
+            var modal = $(this)
+      
+            modal.find('.modal-body #kode_outlet').val(kode_outlet);
         })
       
                         

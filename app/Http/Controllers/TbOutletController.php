@@ -80,9 +80,12 @@ class TbOutletController extends Controller
      * @param  \App\tb_vendor  $tb_vendor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tb_outlet $tb_outlet)
+    public function update(Request $request)
     {
-        //
+        $outlet = tb_outlet::findOrFail($request->kode_outlet);
+
+        $outlet->update($request->all());
+        return back();
     }
 
     /**
@@ -91,8 +94,11 @@ class TbOutletController extends Controller
      * @param  \App\tb_vendor  $tb_vendor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tb_outlet $tb_outlet)
+    public function destroy(Request $request)
     {
-        //
+        $outlet = tb_outlet::findOrFail($request->kode_outlet);
+        $outlet->delete();
+
+        return back();
     }
 }
