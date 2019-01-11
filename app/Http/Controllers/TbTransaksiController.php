@@ -36,7 +36,7 @@ class TbTransaksiController extends Controller
 
   }
 
-  public function create()
+  public function create(Request $request)
   {
     $nama_outlet = $request->outlet;
     $outlet = tb_outlet::all();

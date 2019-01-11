@@ -17,8 +17,9 @@
                   <strong class="card-title" v-if="headerText">Tambah Transaksi</strong>
                 </div>
                 <div class="card-body">
-                  <form action="{{action('TbTransaksiController@store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                  <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
                       {{ csrf_field() }}
+                      <!-- {{$nama_outlet}} -->
                       <input type="hidden" id="kode_pn" name="outlet" value="{{$nama_outlet}}"placeholder="Kode PN" class="form-control">
                       <div class="row form-group">
                           <div class="col col-md-3">
