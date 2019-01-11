@@ -187,6 +187,10 @@
                             <a href="form.html">
                                 <i class="far fa-check-square"></i>Stock Keluar</a>
                         </li>
+                        <li class="@yield('stock_keluar')">
+                            <a href="/lainnya">
+                                <i class="far fa-check-square"></i>Lainnya</a>
+                        </li>
 
                         <li class="@yield('active') has-sub">
                             <a class="js-arrow" href="#">
