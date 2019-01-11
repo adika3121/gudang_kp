@@ -43,7 +43,7 @@
                                                 <td class="text-right">{{$tp_brg->stock_keluar}}</td>
                                                 <td class="text-right">{{$tp_brg->sisa_stock}}</td>
                                                 <td class="catatan">{{$tp_brg->keterangan}}</td>
-                                                <td><a href="#" class="btn btn-outline-warning"
+                                                <td><a href="#" class="edit-modal btn btn-outline-warning"
                                                       data-toggle="modal"
                                                       data-target="#ModalUpdate"
                                                       data-kodeMaster="{{$tp_brg->kode_master}}"
@@ -52,8 +52,7 @@
                                                       data-kodePN="{{$tp_brg->kode_pn}}"
                                                       data-namaMerek="{{$tp_brg->tb_merek['nama_merek']}}"
                                                       data-namaBarang="{{$tp_brg->nama_barang}}"
-                                                      data-catatan="{{$tp_brg->keterangan}}"
-                                                      >
+                                                      data-catatan="{{$tp_brg->keterangan}}">
                                                         <i class="fa fa-edit"></i></a>
                                                         <a href="" class="btn btn-outline-danger">
                                                                 <i class="fa fa-trash"></i></a></td>
@@ -96,15 +95,15 @@
                       </div>
                       <div class="card-body card-block">
                           <form id="edit-form" action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
-                              {{method_field('patch')}}
+                              <!-- {{method_field('patch')}} -->
                               {{ csrf_field() }}
                               <div class="row form-group">
                                   <div class="col col-md-3">
                                       <label for="select" class=" form-control-label">Outlet</label>
                                   </div>
                                   <div class="col-12 col-md-9">
-                                      <select name="modal-input-kode_outlet" id="kode_outlet" class="form-control">
-                                          <option value="" id="kode_outlet" name=""></option>
+                                      <select name="modal-input-kode_outlet" id="outlet" class="form-control">
+                                          <option value="" id="kode_outlet"></option>
                                           <@if(count($outlet->all()) > 0)
                                               @foreach($outlet->all() as $outlet)
                                                   <option value="{{$outlet->kode_outlet}}">{{$outlet->nama_outlet}}</option>
