@@ -17,14 +17,14 @@
                 <strong class="card-title" v-if="headerText">Modals</strong>
               </div>
               <div class="card-body">
-                <form action="{{action('MasterController@store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <form action="{{action('TbTransaksiController@store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
                     {{ csrf_field() }}
                     <div class="row form-group">
                         <div class="col col-md-3">
                             <label for="select" class=" form-control-label">Nama Barang</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <select name="outlet" id="outlet" class="form-control">
+                            <select name="kode_master" id="outlet" class="form-control">
                                 <@if(count($nama_barang->all()) > 0)
                                     @foreach($nama_barang->all() as $brg)
                                         <option value="{{$brg->kode_master}}">{{$brg->nama_barang}}</option>
@@ -39,7 +39,7 @@
                             <label for="select" class=" form-control-label">Nama Vendor</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <select name="vendor" id="kategori" class="form-control">
+                            <select name="kode_vendor" id="kategori" class="form-control">
                             <@if(count($vendor->all()) > 0)
                                 @foreach($vendor->all() as $vnd)
                                     <option value="{{$vnd->kode_vendor}}">{{$vnd->nama_vendor}}</option>
@@ -53,7 +53,15 @@
                             <label for="text-input" class=" form-control-label">Kode SN</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <input type="text" id="kode_pn" name="kode_pn" placeholder="SN" class="form-control">
+                            <input type="text" id="kode_pn" name="sn" placeholder="SN" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label for="text-input" class=" form-control-label">Catatan</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <textarea id="kode_pn" name="keterangan" placeholder="..." class="form-control"></textarea>
                         </div>
                     </div>
               </div>
