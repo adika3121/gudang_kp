@@ -21,8 +21,9 @@ class TbTransaksiController extends Controller
   {
       $tampilTransaksi = tb_transaksi::with('tb_vendor', 'master')
                       ->get();
+      $tb_outlet = tb_outlet::all();
       // $tampilBRG = DB
-      return view('tampil_transaksi', compact('tampilTransaksi'));
+      return view('tampil_transaksi', compact('tampilTransaksi', 'tb_outlet'));
   }
 
   /**
@@ -30,9 +31,21 @@ class TbTransaksiController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
+
+  public function outlet(Request $request){
+
+  }
+
   public function create()
   {
-      //
+    $nama_outlet = $request->outlet;
+    $outlet = tb_outlet::all();
+    $nama_barang = master::where('kode_outlet', $nama_outlet)
+                    -> select('tb_master.kode_master as kode_master', 'tb_master.nama_barang as nama_barang')
+                    -> get();
+    $vendor = tb_vendor::all();
+
+    return view('tambah_transaksi', compact('nama_outlet', 'outlet', 'nama_barang', 'vendor'));
   }
 
   /**
@@ -43,7 +56,17 @@ class TbTransaksiController extends Controller
    */
   public function store(Request $request)
   {
-      //
+      $kode_outlet = $request->outlet;
+      $transaksi = new tb_transaksi();
+      $transaksi->kode_master = $request->kode_master;
+      $transaksi->sn = $request->sn;
+      $transaksi->vendor = $request->kode_vendor;
+      $transaksi->keterangan = $request->keterangan;
+      $transaksi->save();
+      return redirect("/transaksi");
+
+
+
   }
 
   /**

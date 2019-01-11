@@ -122,7 +122,7 @@
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="text-input" class=" form-control-label">Nama Barang</label>
+                                    <label for="text-input" class=" form-control-label">Kode PN</label>
                                 </div>
                                 <div class="col-12 col-md-9">
                                     <input type="text" id="kode_pn" name="kode_pn" placeholder="Kode PN" class="form-control">
