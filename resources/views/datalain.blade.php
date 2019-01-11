@@ -30,15 +30,10 @@
                                                                     data-kategori="{{$tp_ktgr->nama_kategori}}"
                                                                     data-catid={{$tp_ktgr->kode_kategori}} ><i class="fa fa-edit"></i></button>
                                                                     
-                                                                    <button class="btn btn-danger" data-catid={{$tp_ktgr->kode_kategori}} data-toggle="modal" data-target="#deleteKategori"><i class="fa fa-trash"></i></button>
-                                                                    {{-- <a href="#" class="btn btn-outline-warning" data-toggle="modal"
-                                                                    data-target="#EditKategori"
-                                                                    data-kategori="{{$tp_ktgr->nama_kategori}}"
+                                                                    <button class="btn btn-danger" 
                                                                     data-catid={{$tp_ktgr->kode_kategori}} 
-                                                                    >
-                                                                      <i class="fa fa-edit"></i></a>
-                                                                      <a href="" class="btn btn-outline-danger">
-                                                                              <i class="fa fa-trash"></i></a> --}}
+                                                                    data-toggle="modal" 
+                                                                    data-target="#deleteKategori"><i class="fa fa-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             @endforeach
@@ -99,6 +94,7 @@
                                                                 <td>{{$tp_vendor->nama_vendor}}</td>
                                                                 <td>{{$tp_vendor->alamat}}</td>
                                                                 <td>{{$tp_vendor->no_telp}}</td>
+                                                                
                                                             </tr>
                                                             @endforeach
                                                         </tbody>
@@ -169,7 +165,7 @@
                                     <i class="fa fa-dot-circle-o"></i> Simpan
                                 </button>
                                 <button type="reset" class="btn btn-danger btn-sm">
-                                    <i class="fa fa-ban"></i> Batal
+                                    <i class="fa fa-refresh"></i> Reset
                                 </button>
                             </div>          
                             </form>    
@@ -183,7 +179,7 @@
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="largeModalLabel">Tambahkan Kategori Baru</h5>
+                                <h5 class="modal-title" id="largeModalLabel">Edit Kategori</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -201,9 +197,6 @@
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Simpan
                                         </button>
-                                        <button type="reset" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-ban"></i> Batal
-                                        </button>
                                     </div>          
                                 </form>    
                             </div>
@@ -216,7 +209,7 @@
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="largeModalLabel">Tambahkan Kategori Baru</h5>
+                                    <h5 class="modal-title" id="largeModalLabel">Delete Kategori</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -229,8 +222,6 @@
                                             Are you sure you want to delete this?
                                         </p>
                                         <input type="hidden" id="kode_kategori" name="kode_kategori" value="">
-
-                                        </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
                                             <button type="submit" class="btn btn-warning">Yes, Delete</button>
@@ -240,6 +231,7 @@
                             </div>
                         </div>
                     </div>
+                
 
                 {{-- Modal Merk --}}
                 <div class="modal fade" id="ModalMerk" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
@@ -263,7 +255,7 @@
                                             <i class="fa fa-dot-circle-o"></i> Simpan
                                         </button>
                                         <button type="reset" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-ban"></i> Batal
+                                            <i class="fa fa-refresh"></i> Reset
                                         </button>
                                     </div>          
                                 </form>    
