@@ -16,9 +16,11 @@
                   <i class="mr-2 fa fa-align-justify"></i>
                   <strong class="card-title" v-if="headerText">Tambah Transaksi</strong>
                 </div>
+                <form action="#" method="post" class="form-horizontal">
                 <div class="card-body">
-                  <form action="{{action('TbTransaksiController@store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+
                       {{ csrf_field() }}
+                      <!-- {{$nama_outlet}} -->
                       <input type="hidden" id="kode_pn" name="outlet" value="{{$nama_outlet}}"placeholder="Kode PN" class="form-control">
                       <div class="row form-group">
                           <div class="col col-md-3">
@@ -64,17 +66,18 @@
                               <textarea type="text" id="kode_pn" rows="9" name="keterangan" placeholder="Masukan Catatan.." class="form-control">
                           </div>
                       </div>
-                      <div class="card-footer">
-                          <button type="submit" class="btn btn-primary btn-sm">
-                              <i class="fa fa-dot-circle-o"></i> Submit
-                          </button>
 
-                          <button type="reset" class="btn btn-danger btn-sm">
-                              <i class="fa fa-ban"></i> Reset
-                          </button>
-                      </div>
-                  </form>
                 </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Submit
+                    </button>
+                    <button type="reset" class="btn btn-danger btn-sm">
+                        <i class="fa fa-ban"></i> Reset
+                    </button>
+
+                </div>
+                </form>
               </div>
 
             </div>

@@ -33,10 +33,17 @@ class TbTransaksiController extends Controller
    */
 
   public function outlet(Request $request){
+    $nama_outlet = $request->outlet;
+    $outlet = tb_outlet::all();
+    $nama_barang = master::where('kode_outlet', $nama_outlet)
+                    -> select('tb_master.kode_master as kode_master', 'tb_master.nama_barang as nama_barang')
+                    -> get();
+    $vendor = tb_vendor::all();
 
+    return view('tambah_transaksi2', compact('nama_outlet', 'outlet', 'nama_barang', 'vendor'));
   }
 
-  public function create()
+  public function create(Request $request)
   {
     $nama_outlet = $request->outlet;
     $outlet = tb_outlet::all();
@@ -56,7 +63,7 @@ class TbTransaksiController extends Controller
    */
   public function store(Request $request)
   {
-      $kode_outlet = $request->outlet;
+
       $transaksi = new tb_transaksi();
       $transaksi->kode_master = $request->kode_master;
       $transaksi->sn = $request->sn;

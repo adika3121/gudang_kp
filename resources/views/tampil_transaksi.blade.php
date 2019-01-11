@@ -73,7 +73,7 @@
                   <div class="card-header">
                       <strong>Pilih Outlet</strong>
                   </div>
-                  <form action="{{action('TbTransaksiController@create')}}" method="post" class="">
+                  <form action="{{action('TbTransaksiController@outlet')}}" method="post" class="">
                   <div class="card-body card-block">
                       {{ csrf_field() }}
                           <div class="form-group">
