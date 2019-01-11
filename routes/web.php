@@ -23,9 +23,9 @@ Route::get('/master', 'MasterController@index');
 Route::get('/tambah-barang', 'MasterController@create')->name('tambahbarang');
 // Route::get('/transaksi', 'TbTransaksiController@create')->name('transaksi');
 
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::get('/tesTampil', function () {
+    return view('update_master');
+});
 
 Auth::routes();
 

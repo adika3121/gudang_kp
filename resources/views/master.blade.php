@@ -43,7 +43,7 @@
                                                 <td class="text-right">{{$tp_brg->stock_keluar}}</td>
                                                 <td class="text-right">{{$tp_brg->sisa_stock}}</td>
                                                 <td class="catatan">{{$tp_brg->keterangan}}</td>
-                                                <td><a href="#" class="btn btn-outline-warning"
+                                                <td><a href="#" class="edit-modal btn btn-outline-warning"
                                                       data-toggle="modal"
                                                       data-target="#ModalUpdate"
                                                       data-kodeMaster="{{$tp_brg->kode_master}}"
@@ -52,8 +52,7 @@
                                                       data-kodePN="{{$tp_brg->kode_pn}}"
                                                       data-namaMerek="{{$tp_brg->tb_merek['nama_merek']}}"
                                                       data-namaBarang="{{$tp_brg->nama_barang}}"
-                                                      data-catatan="{{$tp_brg->keterangan}}"
-                                                      >
+                                                      data-catatan="{{$tp_brg->keterangan}}">
                                                         <i class="fa fa-edit"></i></a>
                                                         <a href="" class="btn btn-outline-danger">
                                                                 <i class="fa fa-trash"></i></a></td>
@@ -79,6 +78,89 @@
                 <!-- END PAGE CONTAINER-->
                 </div>
 
+                <!-- modal tambah barang -->
+          			<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+          				<div class="modal-dialog modal-lg" role="document">
+          					<div class="modal-content">
+          						<div class="modal-header">
+          							<h5 class="modal-title" id="largeModalLabel">Tambah Barang</h5>
+          							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          								<span aria-hidden="true">&times;</span>
+          							</button>
+          						</div>
+                      <form action="{{action('MasterController@store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                          {{ csrf_field() }}
+          						<div class="modal-body">
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="select" class=" form-control-label">Outlet</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <select name="outlet" id="outlet" class="form-control">
+                                        <@if(count($outlet->all()) > 0)
+                                            @foreach($outlet->all() as $outlet)
+                                                <option value="{{$outlet->kode_outlet}}">{{$outlet->nama_outlet}}</option>
+                                            @endforeach
+                                    @endif
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="select" class=" form-control-label">Kategori</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <select name="kategori" id="kategori" class="form-control">
+                                    <@if(count($kategori->all()) > 0)
+                                        @foreach($kategori->all() as $kategori)
+                                            <option value="{{$kategori->kode_kategori}}">{{$kategori->nama_kategori}}</option>
+                                        @endforeach
+                                    @endif
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="text-input" class=" form-control-label">Nama Barang</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input type="text" id="kode_pn" name="kode_pn" placeholder="Kode PN" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="text-input" class=" form-control-label">Nama Barang</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" id="nama_barang" name="nama_barang" placeholder="Nama Barang" class="form-control">
+                                    </div>
+                                </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="select" class=" form-control-label">Merk</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <select name="merk" id="merk" class="form-control">
+                                    <@if(count($merk->all()) > 0)
+                                        @foreach($merk->all() as $merk)
+                                            <option value="{{$merk->kode_merek}}">{{$merk->nama_merek}}</option>
+                                        @endforeach
+                                    @endif
+                                    </select>
+                                </div>
+                            </div>
+          						</div>
+          						<div class="modal-footer">
+          							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          							<button type="submit" class="btn btn-primary">Confirm</button>
+                      </form>
+          						</div>
+          					</div>
+          				</div>
+          			</div>
+          			<!-- end modal tambah barang -->
+
       <!-- modal update -->
 			<div class="modal fade" id="ModalUpdate" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-lg" role="document">
@@ -96,15 +178,15 @@
                       </div>
                       <div class="card-body card-block">
                           <form id="edit-form" action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
-                              {{method_field('patch')}}
+                              <!-- {{method_field('patch')}} -->
                               {{ csrf_field() }}
                               <div class="row form-group">
                                   <div class="col col-md-3">
                                       <label for="select" class=" form-control-label">Outlet</label>
                                   </div>
                                   <div class="col-12 col-md-9">
-                                      <select name="modal-input-kode_outlet" id="kode_outlet" class="form-control">
-                                          <option value="" id="kode_outlet" name=""></option>
+                                      <select name="modal-input-kode_outlet" id="outlet" class="form-control">
+                                          <option value="" id="kode_outlet"></option>
                                           <@if(count($outlet->all()) > 0)
                                               @foreach($outlet->all() as $outlet)
                                                   <option value="{{$outlet->kode_outlet}}">{{$outlet->nama_outlet}}</option>
