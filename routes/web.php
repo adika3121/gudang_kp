@@ -25,7 +25,7 @@ Route::post('/tambah-stock','TbTransaksiController@outlet');
 // Route::get('/transaksi', 'TbTransaksiController@create')->name('transaksi');
 
 Route::get('/tesTampil', function () {
-    return view('tambah_transaksi');
+    return view('tampil_stock_keluar');
 });
 
 Auth::routes();
