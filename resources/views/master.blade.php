@@ -150,6 +150,14 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="text-input" class=" form-control-label">Catatan</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <textarea id="kode_pn" name="keterangan" placeholder="..." class="form-control"></textarea>
+                                </div>
+                            </div>
           						</div>
           						<div class="modal-footer">
           							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
