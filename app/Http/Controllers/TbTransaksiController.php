@@ -64,12 +64,19 @@ class TbTransaksiController extends Controller
   public function store(Request $request)
   {
 
+      $k_master = $request->kode_master;
       $transaksi = new tb_transaksi();
       $transaksi->kode_master = $request->kode_master;
       $transaksi->sn = $request->sn;
       $transaksi->vendor = $request->kode_vendor;
       $transaksi->keterangan = $request->keterangan;
       $transaksi->save();
+
+      $master = master::find($k_master);
+      $input_stock = tb_transaksi::where('kode_master', $k_master)
+                    ->count();
+      $master->stock_masuk = $input_stock;
+      $master->save();
       return redirect("/transaksi");
 
 

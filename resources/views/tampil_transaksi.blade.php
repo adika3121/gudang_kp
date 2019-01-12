@@ -30,7 +30,7 @@
                                     <td>{{$tp_transaksi->master['kode_master']}}</td>
                                     <td>{{$tp_transaksi->sn}}</td>
                                     <td>{{$tp_transaksi->tb_vendor['nama_vendor']}}</td>
-                                    <td>{{$tp_transaksi->tgl_masuk}}</td>
+                                    <td>{{$tp_transaksi->created_at}}</td>
                                     <td>{{$tp_transaksi->keterangan}}</td>
                                     <td><a href="" class="btn btn-outline-warning">
                                             <i class="fa fa-edit"></i></a>
