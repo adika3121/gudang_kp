@@ -88,7 +88,7 @@ class MasterController extends Controller
         $master->nama_barang = $request->nama_barang;
         $master->merek = $request->merk;
         $master->kode_master = $kode_master;
-        $master->stock_masuk = $input_stock;
+        $master->keterangan = $request->keterangan;
         $master->save();
         return redirect("/master");
     }
@@ -139,6 +139,7 @@ class MasterController extends Controller
         $master->nama_barang = $request->nama_barang;
         $master->merek = $request->merk;
         $master->kode_master = $kode_master;
+        $master->keterangan = $request->keterangan;
         $master->save();
 
         return redirect("/");
