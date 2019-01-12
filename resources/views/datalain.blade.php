@@ -29,12 +29,12 @@
                                                                     data-target="#editKategori"
                                                                     data-kategori="{{$tp_ktgr->nama_kategori}}"
                                                                     data-catid={{$tp_ktgr->kode_kategori}} ><i class="fa fa-edit"></i></button>
-                                                                    
+
                                                                     <button class="btn btn-danger" data-catid={{$tp_ktgr->kode_kategori}} data-toggle="modal" data-target="#deleteKategori"><i class="fa fa-trash"></i></button>
                                                                     {{-- <a href="#" class="btn btn-outline-warning" data-toggle="modal"
                                                                     data-target="#EditKategori"
                                                                     data-kategori="{{$tp_ktgr->nama_kategori}}"
-                                                                    data-catid={{$tp_ktgr->kode_kategori}} 
+                                                                    data-catid={{$tp_ktgr->kode_kategori}}
                                                                     >
                                                                       <i class="fa fa-edit"></i></a>
                                                                       <a href="" class="btn btn-outline-danger">
@@ -73,12 +73,12 @@
                                                                     data-target="#editMerk"
                                                                     data-merk="{{$tp_merk->nama_merek}}"
                                                                     data-idmerk={{$tp_merk->kode_merek}} ><i class="fa fa-edit"></i></button>
-                                                                    
+
                                                                     <button class="btn btn-danger" data-idmerk={{$tp_merk->kode_merek}} data-toggle="modal" data-target="#deleteMerk"><i class="fa fa-trash"></i></button>
                                                                     {{-- <a href="#" class="btn btn-outline-warning" data-toggle="modal"
                                                                     data-target="#editMerk"
                                                                     data-merk="{{$tp_merk->nama_merek}}"
-                                                                    data-idmerk={{$tp_merk->kode_merek}} 
+                                                                    data-idmerk={{$tp_merk->kode_merek}}
                                                                     >
                                                                       <i class="fa fa-edit"></i></a>
                                                                       <a href="" class="btn btn-outline-danger">
@@ -122,11 +122,11 @@
                                                                     data-target="#editVendor"
                                                                     data-namavendor="{{$tp_vendor->nama_vendor}}"
                                                                     data-alamatvendor="{{$tp_vendor->alamat}}"
-                                                                    data-telpvendor="{{$tp_vendor->no_telp}}" 
+                                                                    data-telpvendor="{{$tp_vendor->no_telp}}"
                                                                     data-idvendor={{$tp_vendor->kode_vendor}} ><i class="fa fa-edit"></i></button>
-                                                                    
+
                                                                     <button class="btn btn-danger" data-idvendor={{$tp_vendor->kode_vendor}} data-toggle="modal" data-target="#deleteVendor"><i class="fa fa-trash"></i></button>
-                                                                    
+
                                                                 </td>
                                                             </tr>
                                                             @endforeach
@@ -138,7 +138,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                             {{-- Outlet --}}
                             <div style="width:100%;">
                                 <div style="padding-top:10px; padding-bottom:20px;">
@@ -146,7 +146,7 @@
                                         <h3 style="padding-top:30px; padding-bottom:10px;">Daftar Outlet</h3>
                                             <div class="table-responsive table--no-card m-b-30 table-data">
                                                 <table class="table table-borderless table-striped table-earning">
-                                                    <thead style="text-align: center;"> 
+                                                    <thead style="text-align: center;">
                                                         <tr>
                                                             <th>Kode Outlet</th>
                                                             <th>Nama Outlet</th>
@@ -168,11 +168,11 @@
                                                                     data-target="#editOutlet"
                                                                     data-namaoutlet="{{$tp_outlet->nama_outlet}}"
                                                                     data-alamatoutlet="{{$tp_outlet->alamat}}"
-                                                                    data-telpoutlet="{{$tp_outlet->no_telp}}" 
+                                                                    data-telpoutlet="{{$tp_outlet->no_telp}}"
                                                                     data-idoutlet={{$tp_outlet->kode_outlet}} ><i class="fa fa-edit"></i></button>
-                                                                    
+
                                                                     <button class="btn btn-danger" data-idoutlet={{$tp_outlet->kode_outlet}} data-toggle="modal" data-target="#deleteOutlet"><i class="fa fa-trash"></i></button>
-                                                                    
+
                                                                 </td>
                                                             </tr>
                                                             @endforeach
@@ -213,8 +213,8 @@
                                 <button type="reset" class="btn btn-danger btn-sm">
                                     <i class="fa fa-ban"></i> Batal
                                 </button>
-                            </div>          
-                            </form>    
+                            </div>
+                            </form>
                             </div>
                         </div>
                     </div>
@@ -246,8 +246,8 @@
                                         <button type="reset" class="btn btn-danger btn-sm">
                                             <i class="fa fa-ban"></i> Batal
                                         </button>
-                                    </div>          
-                                </form>    
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -277,7 +277,7 @@
                                             <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
                                             <button type="submit" class="btn btn-warning">Yes, Delete</button>
                                         </div>
-                                    </form>   
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -307,8 +307,8 @@
                                         <button type="reset" class="btn btn-danger btn-sm">
                                             <i class="fa fa-ban"></i> Batal
                                         </button>
-                                    </div>          
-                                </form>    
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -340,8 +340,8 @@
                                         <button type="reset" class="btn btn-danger btn-sm">
                                             <i class="fa fa-refresh"></i> Reset
                                         </button>
-                                    </div>          
-                                </form>    
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -371,7 +371,7 @@
                                             <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
                                             <button type="submit" class="btn btn-warning">Yes, Delete</button>
                                         </div>
-                                    </form>   
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -450,8 +450,8 @@
                                         <button type="reset" class="btn btn-danger btn-sm">
                                             <i class="fa fa-refresh"></i> Reset
                                         </button>
-                                    </div>          
-                                </form>    
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -481,7 +481,7 @@
                                             <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
                                             <button type="submit" class="btn btn-warning">Yes, Delete</button>
                                         </div>
-                                    </form>   
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -543,7 +543,7 @@
                                     {{method_field('patch')}}
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label for="kode_outlet" class=" form-control-label">Kode Outlet</label>                                        
+                                        <label for="kode_outlet" class=" form-control-label">Kode Outlet</label>
                                         <input type="hidden" id="kode_outlet" name="kode_outlet" value="">
                                         <input type="text" id="kode_outlet" name="kode_outlet" class="form-control">
                                     </div>
@@ -566,8 +566,8 @@
                                         <button type="reset" class="btn btn-danger btn-sm">
                                             <i class="fa fa-refresh"></i> Reset
                                         </button>
-                                    </div>          
-                                </form>    
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -597,70 +597,70 @@
                                             <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
                                             <button type="submit" class="btn btn-warning">Yes, Delete</button>
                                         </div>
-                                    </form>   
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                
+
 @endsection
 
 @section('script-js')
 <script>
 
-  
+
         $('#editKategori').on('show.bs.modal', function (event) {
 
-            var button = $(event.relatedTarget) 
+            var button = $(event.relatedTarget)
             var nama_kategori = button.data('kategori')
             var kode_kategori = button.data('catid')
             var modal = $(this)
-      
+
             modal.find('.modal-body #nama_kategori').val(nama_kategori);
             modal.find('.modal-body #kode_kategori').val(kode_kategori);
         })
 
         $('#deleteKategori').on('show.bs.modal', function (event) {
 
-            var button = $(event.relatedTarget) 
-      
-            var kode_kategori = button.data('catid') 
+            var button = $(event.relatedTarget)
+
+            var kode_kategori = button.data('catid')
             var modal = $(this)
-      
+
             modal.find('.modal-body #kode_kategori').val(kode_kategori);
         })
 
         $('#editMerk').on('show.bs.modal', function (event) {
 
-            var button = $(event.relatedTarget) 
+            var button = $(event.relatedTarget)
             var nama_merek = button.data('merk')
             var kode_merek = button.data('idmerk')
             var modal = $(this)
-      
+
             modal.find('.modal-body #nama_merek').val(nama_merek);
             modal.find('.modal-body #kode_merek').val(kode_merek);
         })
 
         $('#deleteMerk').on('show.bs.modal', function (event) {
 
-            var button = $(event.relatedTarget) 
-      
-            var kode_merek = button.data('idmerk') 
+            var button = $(event.relatedTarget)
+
+            var kode_merek = button.data('idmerk')
             var modal = $(this)
-      
+
             modal.find('.modal-body #kode_merek').val(kode_merek);
         })
 
         $('#editVendor').on('show.bs.modal', function (event) {
 
-            var button = $(event.relatedTarget) 
+            var button = $(event.relatedTarget)
             var nama_vendor = button.data('namavendor')
             var alamat = button.data('alamatvendor')
             var telp = button.data('telpvendor')
             var kode_vendor = button.data('idvendor')
             var modal = $(this)
-      
+
             modal.find('.modal-body #nama_vendor').val(nama_vendor);
             modal.find('.modal-body #kode_vendor').val(kode_vendor);
             modal.find('.modal-body #alamat').val(alamat);
@@ -669,23 +669,23 @@
 
         $('#deleteVendor').on('show.bs.modal', function (event) {
 
-            var button = $(event.relatedTarget) 
-      
-            var kode_vendor = button.data('idvendor') 
+            var button = $(event.relatedTarget)
+
+            var kode_vendor = button.data('idvendor')
             var modal = $(this)
-      
+
             modal.find('.modal-body #kode_vendor').val(kode_vendor);
         })
 
         $('#editOutlet').on('show.bs.modal', function (event) {
 
-            var button = $(event.relatedTarget) 
+            var button = $(event.relatedTarget)
             var nama_outlet = button.data('namaoutlet')
             var alamat = button.data('alamatoutlet')
             var telp = button.data('telpoutlet')
             var kode_outlet = button.data('idoutlet')
             var modal = $(this)
-      
+
             modal.find('.modal-body #nama_outlet').val(nama_outlet);
             modal.find('.modal-body #kode_outlet').val(kode_outlet);
             modal.find('.modal-body #alamat').val(alamat);
@@ -694,15 +694,15 @@
 
         $('#deleteOutlet').on('show.bs.modal', function (event) {
 
-            var button = $(event.relatedTarget) 
-      
-            var kode_outlet = button.data('idoutlet') 
+            var button = $(event.relatedTarget)
+
+            var kode_outlet = button.data('idoutlet')
             var modal = $(this)
-      
+
             modal.find('.modal-body #kode_outlet').val(kode_outlet);
         })
-      
-                        
-      
+
+
+
       </script>
 @endsection

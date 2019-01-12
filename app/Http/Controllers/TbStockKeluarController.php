@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\tb_stock_keluar;
+use App\tb_outlet;
+use App\master;
 
 class TbStockKeluarController extends Controller
 {
@@ -13,7 +16,9 @@ class TbStockKeluarController extends Controller
    */
   public function index()
   {
-
+    $stock_keluar = tb_stock_keluar::all();
+    $tb_outlet = tb_outlet::all();
+    return view('tampil_stock_keluar', compact('stock_keluar', 'tb_outlet'));
   }
 
   /**
