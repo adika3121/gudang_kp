@@ -30,15 +30,10 @@
                                                                     data-kategori="{{$tp_ktgr->nama_kategori}}"
                                                                     data-catid={{$tp_ktgr->kode_kategori}} ><i class="fa fa-edit"></i></button>
 
-                                                                    <button class="btn btn-danger" data-catid={{$tp_ktgr->kode_kategori}} data-toggle="modal" data-target="#deleteKategori"><i class="fa fa-trash"></i></button>
-                                                                    {{-- <a href="#" class="btn btn-outline-warning" data-toggle="modal"
-                                                                    data-target="#EditKategori"
-                                                                    data-kategori="{{$tp_ktgr->nama_kategori}}"
+                                                                    <button class="btn btn-danger"
                                                                     data-catid={{$tp_ktgr->kode_kategori}}
-                                                                    >
-                                                                      <i class="fa fa-edit"></i></a>
-                                                                      <a href="" class="btn btn-outline-danger">
-                                                                              <i class="fa fa-trash"></i></a> --}}
+                                                                    data-toggle="modal"
+                                                                    data-target="#deleteKategori"><i class="fa fa-trash"></i></button>
                                                                 </td>
                                                             </tr>
                                                             @endforeach
@@ -75,25 +70,17 @@
                                                                     data-idmerk={{$tp_merk->kode_merek}} ><i class="fa fa-edit"></i></button>
 
                                                                     <button class="btn btn-danger" data-idmerk={{$tp_merk->kode_merek}} data-toggle="modal" data-target="#deleteMerk"><i class="fa fa-trash"></i></button>
-                                                                    {{-- <a href="#" class="btn btn-outline-warning" data-toggle="modal"
-                                                                    data-target="#editMerk"
-                                                                    data-merk="{{$tp_merk->nama_merek}}"
-                                                                    data-idmerk={{$tp_merk->kode_merek}}
-                                                                    >
-                                                                      <i class="fa fa-edit"></i></a>
-                                                                      <a href="" class="btn btn-outline-danger">
-                                                                              <i class="fa fa-trash"></i></a> --}}
                                                                 </td>
                                                             </tr>
                                                             @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                        {{-- </div> --}}
                                         <button type="button" class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#ModalMerk">+ Tambah Merk
                                         </button>
+                                        </div>
                                     </div>
-                                </div>
+                                {{--  </div>  --}}
                             </div>
                             {{-- Vendor --}}
                             <div style="width:100%;">
@@ -199,22 +186,22 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                        <div class="modal-body">
-                            <form action="{{action('TbKategoriController@store')}}" method="post" class="">
-                                {{ csrf_field() }}
-                                <div class="form-group">
-                                    <label for="nf-email" class=" form-control-label">Nama Kategori</label>
-                                    <input type="text" id="nf-email" name="nama_kategori" placeholder="Masukkan nama kategori.." class="form-control">
+                            <div class="modal-body">
+                                <form action="{{action('TbKategoriController@store')}}" method="post" class="">
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label for="nf-email" class=" form-control-label">Nama Kategori</label>
+                                        <input type="text" id="nf-email" name="nama_kategori" placeholder="Masukkan nama kategori.." class="form-control">
+                                    </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary btn-sm">
+                                        <i class="fa fa-dot-circle-o"></i> Simpan
+                                    </button>
+                                    <button type="reset" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-refresh"></i> Reset
+                                    </button>
                                 </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-dot-circle-o"></i> Simpan
-                                </button>
-                                <button type="reset" class="btn btn-danger btn-sm">
-                                    <i class="fa fa-ban"></i> Batal
-                                </button>
-                            </div>
-                            </form>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -225,7 +212,7 @@
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="largeModalLabel">Tambahkan Kategori Baru</h5>
+                                <h5 class="modal-title" id="largeModalLabel">Edit Kategori</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -235,16 +222,13 @@
                                     {{method_field('patch')}}
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label for="kode_kategori" class=" form-control-label">Nama Kategori</label>
+                                        <label for="nama_kategori" class=" form-control-label">Nama Kategori</label>
                                         <input type="hidden" id="kode_kategori" name="kode_kategori" value="">
                                         <input type="text" id="nama_kategori" name="nama_kategori" class="form-control">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Simpan
-                                        </button>
-                                        <button type="reset" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-ban"></i> Batal
                                         </button>
                                     </div>
                                 </form>
@@ -258,7 +242,7 @@
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="largeModalLabel">Tambahkan Kategori Baru</h5>
+                                    <h5 class="modal-title" id="largeModalLabel">Delete Kategori</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -271,8 +255,6 @@
                                             Are you sure you want to delete this?
                                         </p>
                                         <input type="hidden" id="kode_kategori" name="kode_kategori" value="">
-
-                                        </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
                                             <button type="submit" class="btn btn-warning">Yes, Delete</button>
@@ -282,6 +264,7 @@
                             </div>
                         </div>
                     </div>
+
 
                 {{-- Modal Merk --}}
                 <div class="modal fade" id="ModalMerk" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
@@ -305,7 +288,7 @@
                                             <i class="fa fa-dot-circle-o"></i> Simpan
                                         </button>
                                         <button type="reset" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-ban"></i> Batal
+                                            <i class="fa fa-refresh"></i> Reset
                                         </button>
                                     </div>
                                 </form>
@@ -366,7 +349,6 @@
                                         </p>
                                         <input type="hidden" id="kode_merek" name="kode_merek" value="">
 
-                                        </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
                                             <button type="submit" class="btn btn-warning">Yes, Delete</button>
@@ -475,8 +457,6 @@
                                             Are you sure you want to delete this?
                                         </p>
                                         <input type="hidden" id="kode_vendor" name="kode_vendor" value="">
-
-                                        </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
                                             <button type="submit" class="btn btn-warning">Yes, Delete</button>
@@ -591,8 +571,6 @@
                                             Are you sure you want to delete this?
                                         </p>
                                         <input type="hidden" id="kode_outlet" name="kode_outlet" value="">
-
-                                        </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
                                             <button type="submit" class="btn btn-warning">Yes, Delete</button>
@@ -604,105 +582,4 @@
                     </div>
 
 
-@endsection
-
-@section('script-js')
-<script>
-
-
-        $('#editKategori').on('show.bs.modal', function (event) {
-
-            var button = $(event.relatedTarget)
-            var nama_kategori = button.data('kategori')
-            var kode_kategori = button.data('catid')
-            var modal = $(this)
-
-            modal.find('.modal-body #nama_kategori').val(nama_kategori);
-            modal.find('.modal-body #kode_kategori').val(kode_kategori);
-        })
-
-        $('#deleteKategori').on('show.bs.modal', function (event) {
-
-            var button = $(event.relatedTarget)
-
-            var kode_kategori = button.data('catid')
-            var modal = $(this)
-
-            modal.find('.modal-body #kode_kategori').val(kode_kategori);
-        })
-
-        $('#editMerk').on('show.bs.modal', function (event) {
-
-            var button = $(event.relatedTarget)
-            var nama_merek = button.data('merk')
-            var kode_merek = button.data('idmerk')
-            var modal = $(this)
-
-            modal.find('.modal-body #nama_merek').val(nama_merek);
-            modal.find('.modal-body #kode_merek').val(kode_merek);
-        })
-
-        $('#deleteMerk').on('show.bs.modal', function (event) {
-
-            var button = $(event.relatedTarget)
-
-            var kode_merek = button.data('idmerk')
-            var modal = $(this)
-
-            modal.find('.modal-body #kode_merek').val(kode_merek);
-        })
-
-        $('#editVendor').on('show.bs.modal', function (event) {
-
-            var button = $(event.relatedTarget)
-            var nama_vendor = button.data('namavendor')
-            var alamat = button.data('alamatvendor')
-            var telp = button.data('telpvendor')
-            var kode_vendor = button.data('idvendor')
-            var modal = $(this)
-
-            modal.find('.modal-body #nama_vendor').val(nama_vendor);
-            modal.find('.modal-body #kode_vendor').val(kode_vendor);
-            modal.find('.modal-body #alamat').val(alamat);
-            modal.find('.modal-body #no_telp').val(telp);
-        })
-
-        $('#deleteVendor').on('show.bs.modal', function (event) {
-
-            var button = $(event.relatedTarget)
-
-            var kode_vendor = button.data('idvendor')
-            var modal = $(this)
-
-            modal.find('.modal-body #kode_vendor').val(kode_vendor);
-        })
-
-        $('#editOutlet').on('show.bs.modal', function (event) {
-
-            var button = $(event.relatedTarget)
-            var nama_outlet = button.data('namaoutlet')
-            var alamat = button.data('alamatoutlet')
-            var telp = button.data('telpoutlet')
-            var kode_outlet = button.data('idoutlet')
-            var modal = $(this)
-
-            modal.find('.modal-body #nama_outlet').val(nama_outlet);
-            modal.find('.modal-body #kode_outlet').val(kode_outlet);
-            modal.find('.modal-body #alamat').val(alamat);
-            modal.find('.modal-body #no_telp').val(telp);
-        })
-
-        $('#deleteOutlet').on('show.bs.modal', function (event) {
-
-            var button = $(event.relatedTarget)
-
-            var kode_outlet = button.data('idoutlet')
-            var modal = $(this)
-
-            modal.find('.modal-body #kode_outlet').val(kode_outlet);
-        })
-
-
-
-      </script>
 @endsection

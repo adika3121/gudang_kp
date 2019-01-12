@@ -48,7 +48,7 @@ class TbOutletController extends Controller
         $outlet -> alamat = $request -> alamat;
         $outlet -> no_telp = $request -> no_telp;
         $outlet->save();
-        return redirect('/');
+        return redirect('/lainnya');
     }
 
     /**
