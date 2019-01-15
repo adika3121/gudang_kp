@@ -36,7 +36,7 @@ class TbTransaksiController extends Controller
     $nama_outlet = $request->outlet;
     $outlet = tb_outlet::all();
     $nama_barang = master::where('kode_outlet', $nama_outlet)
-                    -> select('tb_master.kode_master as kode_master', 'tb_master.nama_barang as nama_barang')
+                    -> select('tb_master.id_master as id_master', 'tb_master.kode_master as kode_master', 'tb_master.nama_barang as nama_barang')
                     -> get();
     $vendor = tb_vendor::all();
 
@@ -64,19 +64,23 @@ class TbTransaksiController extends Controller
   public function store(Request $request)
   {
 
-      $k_master = $request->kode_master;
+      $k_master = $request->id_master;
+      $kode_master = master::where('id_master', $k_master)
+                    ->select('tb_master.kode_master as kode_master')
+                    ->first();
       $transaksi = new tb_transaksi();
-      $transaksi->kode_master = $request->kode_master;
+      $transaksi->kode_master = $kode_master->kode_master;
       $transaksi->sn = $request->sn;
       $transaksi->vendor = $request->kode_vendor;
       $transaksi->keterangan = $request->keterangan;
       $transaksi->save();
 
       $master = master::find($k_master);
-      $input_stock = tb_transaksi::where('kode_master', $k_master)
+      $input_stock = tb_transaksi::where('kode_master', $kode_master->kode_master)
                     ->count();
       $master->stock_masuk = $input_stock;
       $master->save();
+
       return redirect("/transaksi");
 
 

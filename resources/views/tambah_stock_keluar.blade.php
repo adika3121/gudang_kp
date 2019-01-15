@@ -16,7 +16,7 @@
                   <i class="mr-2 fa fa-align-justify"></i>
                   <strong class="card-title" v-if="headerText">Tambah Stock Keluar</strong>
                 </div>
-                <form action="{{action('TbStockKeluarController@store')}}" method="post" class="form-horizontal">
+                <form action="{{action('TbStockKeluarController@tambah_sn_keluar')}}" method="post" class="form-horizontal">
                 <div class="card-body">
 
                       {{ csrf_field() }}
@@ -34,14 +34,6 @@
                                       @endforeach
                               @endif
                               </select>
-                          </div>
-                      </div>
-                      <div class="row form-group">
-                          <div class="col col-md-3">
-                              <label for="sn" class=" form-control-label">Kode Serial Number</label>
-                          </div>
-                          <div class="col-12 col-md-9">
-                              <input type="text" id="kode_pn" name="sn" placeholder="Kode SN" class="form-control">
                           </div>
                       </div>
                       <div class="row form-group">

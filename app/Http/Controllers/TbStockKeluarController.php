@@ -34,6 +34,13 @@ class TbStockKeluarController extends Controller
      return view('tambah_stock_keluar', compact('nama_barang','nama_outlet'));
    }
 
+   public function tambah_sn_keluar(Request $request){
+     $nama_outlet = $request->outlet;
+     $kode_master = $request->kode_master;
+     $ket = $request->keterangan;
+     return view('sn_stockKeluar', compact('nama_outlet', 'kode_master', 'ket'));
+   }
+
   public function create(Request $request)
   {
       $nama_outlet = $request->outlet;

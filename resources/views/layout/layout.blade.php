@@ -462,22 +462,51 @@
     <script src="{{asset('vendor/chartjs/Chart.bundle.min.js')}}"></script>
     <script src="{{asset('vendor/select2/select2.min.js')}}"></script>
 
-    
+
     <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
     <script>
+
         $(function() {
             $('#mastertable').DataTable({
                 scrollX : true,
                 scrollCollapse : true
             });
+            $('#transaksitable').DataTable({
+                scrollX : true,
+                scrollCollapse : true,
+                "autoWidth": false
+            });
+            $('#keluartable').DataTable({
+                scrollX : true,
+                scrollCollapse : true,
+                "autoWidth": false
+            });
         });
     </script>
     <script>
-    
+      $(document).ready(function(){
+        var i = 1;
+        $('#add').click(function(){
+          i++;
+          $('#dynamic_field').append('<tr id="row'+1+'"><td><input type="text" id="kode_pn" name="sn" placeholder="Masukan Kode SN" class="form-control"></td><td><button name"remove" id="'+i+'" class="btn btn-danger">Hapus</button></td></tr>');
+        });
+        $(document).on('click','btn_remove',function(){
+          var button_id = $(this).attr("id");
+          $("#row"+button_id+"").remove();
+        });
+        // $('#submit').click(function(){
+        //   $.ajax({
+        //     url:"{{}}"
+        //   });
+        // });
+      });
+    </script>
+    <script>
+
             $('#editKategori').on('show.bs.modal', function (event) {
 
                 var button = $(event.relatedTarget)
