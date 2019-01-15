@@ -188,7 +188,7 @@
                                 <i class="fas fa-table"></i>Transaksi</a>
                         </li>
                         <li class="@yield('stock_keluar')">
-                            <a href="form.html">
+                            <a href="/stock-keluar">
                                 <i class="far fa-check-square"></i>Stock Keluar</a>
                         </li>
                         <li class="@yield('lainnya')">
@@ -479,97 +479,97 @@
     <script>
     
             $('#editKategori').on('show.bs.modal', function (event) {
-    
-                var button = $(event.relatedTarget) 
+
+                var button = $(event.relatedTarget)
                 var nama_kategori = button.data('kategori')
                 var kode_kategori = button.data('catid')
                 var modal = $(this)
-          
+
                 modal.find('.modal-body #nama_kategori').val(nama_kategori);
                 modal.find('.modal-body #kode_kategori').val(kode_kategori);
             })
-    
+
             $('#deleteKategori').on('show.bs.modal', function (event) {
-    
-                var button = $(event.relatedTarget) 
-          
-                var kode_kategori = button.data('catid') 
+
+                var button = $(event.relatedTarget)
+
+                var kode_kategori = button.data('catid')
                 var modal = $(this)
-          
+
                 modal.find('.modal-body #kode_kategori').val(kode_kategori);
             })
-    
+
             $('#editMerk').on('show.bs.modal', function (event) {
-    
-                var button = $(event.relatedTarget) 
+
+                var button = $(event.relatedTarget)
                 var nama_merek = button.data('merk')
                 var kode_merek = button.data('idmerk')
                 var modal = $(this)
-          
+
                 modal.find('.modal-body #nama_merek').val(nama_merek);
                 modal.find('.modal-body #kode_merek').val(kode_merek);
             })
-    
+
             $('#deleteMerk').on('show.bs.modal', function (event) {
-    
-                var button = $(event.relatedTarget) 
-          
-                var kode_merek = button.data('idmerk') 
+
+                var button = $(event.relatedTarget)
+
+                var kode_merek = button.data('idmerk')
                 var modal = $(this)
-          
+
                 modal.find('.modal-body #kode_merek').val(kode_merek);
             })
-    
+
             $('#editVendor').on('show.bs.modal', function (event) {
-    
-                var button = $(event.relatedTarget) 
+
+                var button = $(event.relatedTarget)
                 var nama_vendor = button.data('namavendor')
                 var alamat = button.data('alamatvendor')
                 var telp = button.data('telpvendor')
                 var kode_vendor = button.data('idvendor')
                 var modal = $(this)
-          
+
                 modal.find('.modal-body #nama_vendor').val(nama_vendor);
                 modal.find('.modal-body #kode_vendor').val(kode_vendor);
                 modal.find('.modal-body #alamat').val(alamat);
                 modal.find('.modal-body #no_telp').val(telp);
             })
-    
+
             $('#deleteVendor').on('show.bs.modal', function (event) {
-    
-                var button = $(event.relatedTarget) 
-          
-                var kode_vendor = button.data('idvendor') 
+
+                var button = $(event.relatedTarget)
+
+                var kode_vendor = button.data('idvendor')
                 var modal = $(this)
-          
+
                 modal.find('.modal-body #kode_vendor').val(kode_vendor);
             })
-    
+
             $('#editOutlet').on('show.bs.modal', function (event) {
-    
-                var button = $(event.relatedTarget) 
+
+                var button = $(event.relatedTarget)
                 var nama_outlet = button.data('namaoutlet')
                 var alamat = button.data('alamatoutlet')
                 var telp = button.data('telpoutlet')
                 var kode_outlet = button.data('idoutlet')
                 var modal = $(this)
-          
+
                 modal.find('.modal-body #nama_outlet').val(nama_outlet);
                 modal.find('.modal-body #kode_outlet').val(kode_outlet);
                 modal.find('.modal-body #alamat').val(alamat);
                 modal.find('.modal-body #no_telp').val(telp);
             })
-    
+
             $('#deleteOutlet').on('show.bs.modal', function (event) {
-    
-                var button = $(event.relatedTarget) 
-          
-                var kode_outlet = button.data('idoutlet') 
+
+                var button = $(event.relatedTarget)
+
+                var kode_outlet = button.data('idoutlet')
                 var modal = $(this)
-          
+
                 modal.find('.modal-body #kode_outlet').val(kode_outlet);
             })
-               
+
     </script>
 
 </body>

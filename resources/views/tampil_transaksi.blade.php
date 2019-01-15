@@ -59,44 +59,44 @@
                 </div>
 
                 <!-- modal large -->
-			<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-lg" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="largeModalLabel">Pilih Outlet Terlebih Dahulu</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-              <div class="card" style="center">
-                  <div class="card-header">
-                      <strong>Pilih Outlet</strong>
-                  </div>
-                  <form action="{{action('TbTransaksiController@outlet')}}" method="post" class="">
-                  <div class="card-body card-block">
-                      {{ csrf_field() }}
-                          <div class="form-group">
-                              <label for="outlet" class=" form-control-label">Nama Outlet</label>
-                              <select class="form-control" name="outlet">
-                                <@if(count($tb_outlet->all()) > 0)
-                                    @foreach($tb_outlet->all() as $outlet)
-                                        <option value="{{$outlet->kode_outlet}}">{{$outlet->nama_outlet}}</option>
-                                    @endforeach
-                                @endif
-                              </select>
-                          </div>
-                  </div>
-              </div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
-							<button type="submit" class="btn btn-primary">Lanjut</button>
-						</div>
-            </form>
-					</div>
-				</div>
-			</div>
-			<!-- end modal large -->
+          			<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+          				<div class="modal-dialog modal-lg" role="document">
+          					<div class="modal-content">
+          						<div class="modal-header">
+          							<h5 class="modal-title" id="largeModalLabel">Pilih Outlet Terlebih Dahulu</h5>
+          							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          								<span aria-hidden="true">&times;</span>
+          							</button>
+          						</div>
+          						<div class="modal-body">
+                        <div class="card" style="center">
+                            <div class="card-header">
+                                <strong>Pilih Outlet</strong>
+                            </div>
+                            <form action="{{action('TbTransaksiController@outlet')}}" method="post" class="">
+                            <div class="card-body card-block">
+                                {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label for="outlet" class=" form-control-label">Nama Outlet</label>
+                                        <select class="form-control" name="outlet">
+                                          <@if(count($tb_outlet->all()) > 0)
+                                              @foreach($tb_outlet->all() as $outlet)
+                                                  <option value="{{$outlet->kode_outlet}}">{{$outlet->nama_outlet}}</option>
+                                              @endforeach
+                                          @endif
+                                        </select>
+                                    </div>
+                            </div>
+                        </div>
+          						</div>
+          						<div class="modal-footer">
+          							<button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
+          							<button type="submit" class="btn btn-primary">Lanjut</button>
+          						</div>
+                      </form>
+          					</div>
+          				</div>
+          			</div>
+          			<!-- end modal large -->
 
 @endsection

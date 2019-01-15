@@ -29,10 +29,10 @@
                                                                     data-target="#editKategori"
                                                                     data-kategori="{{$tp_ktgr->nama_kategori}}"
                                                                     data-catid={{$tp_ktgr->kode_kategori}} ><i class="fa fa-edit"></i></button>
-                                                                    
-                                                                    <button class="btn btn-danger" 
-                                                                    data-catid={{$tp_ktgr->kode_kategori}} 
-                                                                    data-toggle="modal" 
+
+                                                                    <button class="btn btn-danger"
+                                                                    data-catid={{$tp_ktgr->kode_kategori}}
+                                                                    data-toggle="modal"
                                                                     data-target="#deleteKategori"><i class="fa fa-trash"></i></button>
                                                                 </td>
                                                             </tr>
@@ -68,7 +68,7 @@
                                                                     data-target="#editMerk"
                                                                     data-merk="{{$tp_merk->nama_merek}}"
                                                                     data-idmerk={{$tp_merk->kode_merek}} ><i class="fa fa-edit"></i></button>
-                                                                    
+
                                                                     <button class="btn btn-danger" data-idmerk={{$tp_merk->kode_merek}} data-toggle="modal" data-target="#deleteMerk"><i class="fa fa-trash"></i></button>
                                                                 </td>
                                                             </tr>
@@ -109,11 +109,11 @@
                                                                     data-target="#editVendor"
                                                                     data-namavendor="{{$tp_vendor->nama_vendor}}"
                                                                     data-alamatvendor="{{$tp_vendor->alamat}}"
-                                                                    data-telpvendor="{{$tp_vendor->no_telp}}" 
+                                                                    data-telpvendor="{{$tp_vendor->no_telp}}"
                                                                     data-idvendor={{$tp_vendor->kode_vendor}} ><i class="fa fa-edit"></i></button>
-                                                                    
+
                                                                     <button class="btn btn-danger" data-idvendor={{$tp_vendor->kode_vendor}} data-toggle="modal" data-target="#deleteVendor"><i class="fa fa-trash"></i></button>
-                                                                    
+
                                                                 </td>
                                                             </tr>
                                                             @endforeach
@@ -125,7 +125,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                             {{-- Outlet --}}
                             <div style="width:100%;">
                                 <div style="padding-top:10px; padding-bottom:20px;">
@@ -133,7 +133,7 @@
                                         <h3 style="padding-top:30px; padding-bottom:10px;">Daftar Outlet</h3>
                                             <div class="table-responsive table--no-card m-b-30 table-data">
                                                 <table class="table table-borderless table-striped table-earning">
-                                                    <thead style="text-align: center;"> 
+                                                    <thead style="text-align: center;">
                                                         <tr>
                                                             <th>Kode Outlet</th>
                                                             <th>Nama Outlet</th>
@@ -155,11 +155,11 @@
                                                                     data-target="#editOutlet"
                                                                     data-namaoutlet="{{$tp_outlet->nama_outlet}}"
                                                                     data-alamatoutlet="{{$tp_outlet->alamat}}"
-                                                                    data-telpoutlet="{{$tp_outlet->no_telp}}" 
+                                                                    data-telpoutlet="{{$tp_outlet->no_telp}}"
                                                                     data-idoutlet={{$tp_outlet->kode_outlet}} ><i class="fa fa-edit"></i></button>
-                                                                    
+
                                                                     <button class="btn btn-danger" data-idoutlet={{$tp_outlet->kode_outlet}} data-toggle="modal" data-target="#deleteOutlet"><i class="fa fa-trash"></i></button>
-                                                                    
+
                                                                 </td>
                                                             </tr>
                                                             @endforeach
@@ -200,8 +200,8 @@
                                     <button type="reset" class="btn btn-danger btn-sm">
                                         <i class="fa fa-refresh"></i> Reset
                                     </button>
-                                </div>          
-                                </form>    
+                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -230,8 +230,8 @@
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Simpan
                                         </button>
-                                    </div>          
-                                </form>    
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -259,12 +259,12 @@
                                             <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
                                             <button type="submit" class="btn btn-warning">Yes, Delete</button>
                                         </div>
-                                    </form>   
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                
+
 
                 {{-- Modal Merk --}}
                 <div class="modal fade" id="ModalMerk" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
@@ -290,8 +290,8 @@
                                         <button type="reset" class="btn btn-danger btn-sm">
                                             <i class="fa fa-refresh"></i> Reset
                                         </button>
-                                    </div>          
-                                </form>    
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -323,8 +323,8 @@
                                         <button type="reset" class="btn btn-danger btn-sm">
                                             <i class="fa fa-refresh"></i> Reset
                                         </button>
-                                    </div>          
-                                </form>    
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -353,7 +353,7 @@
                                             <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
                                             <button type="submit" class="btn btn-warning">Yes, Delete</button>
                                         </div>
-                                    </form>   
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -432,8 +432,8 @@
                                         <button type="reset" class="btn btn-danger btn-sm">
                                             <i class="fa fa-refresh"></i> Reset
                                         </button>
-                                    </div>          
-                                </form>    
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -461,7 +461,7 @@
                                             <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
                                             <button type="submit" class="btn btn-warning">Yes, Delete</button>
                                         </div>
-                                    </form>   
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -523,7 +523,7 @@
                                     {{method_field('patch')}}
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label for="kode_outlet" class=" form-control-label">Kode Outlet</label>                                        
+                                        <label for="kode_outlet" class=" form-control-label">Kode Outlet</label>
                                         <input type="hidden" id="kode_outlet" name="kode_outlet" value="">
                                         <input type="text" id="kode_outlet" name="kode_outlet" class="form-control">
                                     </div>
@@ -546,8 +546,8 @@
                                         <button type="reset" class="btn btn-danger btn-sm">
                                             <i class="fa fa-refresh"></i> Reset
                                         </button>
-                                    </div>          
-                                </form>    
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -575,12 +575,11 @@
                                             <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
                                             <button type="submit" class="btn btn-warning">Yes, Delete</button>
                                         </div>
-                                    </form>   
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                
-@endsection
 
+@endsection

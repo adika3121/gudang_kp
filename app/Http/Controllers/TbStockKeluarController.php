@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\tb_stock_keluar;
+use App\tb_outlet;
+use App\master;
 
 class TbStockKeluarController extends Controller
 {
@@ -13,7 +16,9 @@ class TbStockKeluarController extends Controller
    */
   public function index()
   {
-
+    $stock_keluar = tb_stock_keluar::all();
+    $tb_outlet = tb_outlet::all();
+    return view('tampil_stock_keluar', compact('stock_keluar', 'tb_outlet'));
   }
 
   /**
@@ -21,9 +26,21 @@ class TbStockKeluarController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
-  public function create()
+   public function tambah_stock_keluar(Request $request){
+     $nama_outlet = $request->outlet;
+     $nama_barang = master::where('kode_outlet', $nama_outlet)
+                   -> select('tb_master.kode_master as kode_master', 'tb_master.nama_barang as nama_barang')
+                   -> get();
+     return view('tambah_stock_keluar', compact('nama_barang','nama_outlet'));
+   }
+
+  public function create(Request $request)
   {
-      //
+      $nama_outlet = $request->outlet;
+      $nama_barang = master::where('kode_outlet', $nama_outlet)
+                    -> select('tb_master.kode_master as kode_master', 'tb_master.nama_barang as nama_barang')
+                    -> get();
+      return view('tambah_stock_keluar', compact('nama_barang'));
   }
 
   /**
@@ -35,6 +52,13 @@ class TbStockKeluarController extends Controller
   public function store(Request $request)
   {
 
+      $stock_out = new tb_stock_keluar();
+      $stock_out->sn = $request->sn;
+      $stock_out->kode_master = $request->kode_master;
+      $stock_out->keterangan = $request->keterangan;
+      $stock_out->save();
+
+      return redirect('/stock-keluar');
   }
 
   /**
