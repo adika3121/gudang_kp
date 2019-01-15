@@ -462,7 +462,7 @@
     <script src="{{asset('vendor/chartjs/Chart.bundle.min.js')}}"></script>
     <script src="{{asset('vendor/select2/select2.min.js')}}"></script>
 
-    
+
     <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 
@@ -476,8 +476,21 @@
             });
         });
     </script>
+
     <script>
-    
+    $('#editMaster').on('show.bs.modal', function (event) {
+
+        var button = $(event.relatedTarget)
+        var keterangan = button.data('keterangan')
+        var kode_master = button.data('kode_master')
+        var modal = $(this)
+
+        modal.find('.modal-body #keterangan').val(keterangan);
+        modal.find('.modal-body #kode_master').val(kode_master);
+
+    });
+
+
             $('#editKategori').on('show.bs.modal', function (event) {
 
                 var button = $(event.relatedTarget)
