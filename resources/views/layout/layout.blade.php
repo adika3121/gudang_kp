@@ -33,6 +33,10 @@
     <!-- Main CSS-->
     <link href="{{asset('css/theme.css')}}" rel="stylesheet" media="all">
 
+    <link rel="stylesheet" href="jquery/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"></link>
+
+
 </head>
 
 <body class="animsition">
@@ -456,11 +460,22 @@
     <script src="{{asset('vendor/circle-progress/circle-progress.min.js')}}"></script>
     <script src="{{asset('vendor/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
     <script src="{{asset('vendor/chartjs/Chart.bundle.min.js')}}"></script>
-    <script src="{{asset('vendor/select2/select2.min.js')}}">
-    </script>
+    <script src="{{asset('vendor/select2/select2.min.js')}}"></script>
+
+    
+    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    <script>
+        $(function() {
+            $('#mastertable').DataTable({
+                scrollX : true,
+                scrollCollapse : true
+            });
+        });
+    </script>
     <script>
     
             $('#editKategori').on('show.bs.modal', function (event) {
