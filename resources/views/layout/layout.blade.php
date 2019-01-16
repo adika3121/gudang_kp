@@ -505,6 +505,37 @@
                 modal.find('.modal-body #id_master').val(id_master);
             })
 
+            $('#deleteMaster').on('show.bs.modal', function (event) {
+
+                var button = $(event.relatedTarget)
+                var id_master = button.data('id_master')
+                var modal = $(this)
+
+                modal.find('.modal-body #id_master').val(id_master);
+            })
+
+            $('#editTransaksi').on('show.bs.modal', function (event) {
+
+                var button = $(event.relatedTarget)
+                var keterangan_transaksi = button.data('keterangan_transaksi')
+                var vendor_transaksi = button.data('vendor_transaksi')
+                var kode_transaksi = button.data('kode_transaksi')
+                var modal = $(this)
+
+                modal.find('.modal-body #keterangan').val(keterangan_transaksi);
+                modal.find('.modal-body #vendor').val(vendor_transaksi);
+                modal.find('.modal-body #kode_transaksi').val(kode_transaksi);
+            })
+
+            $('#deleteTransaksi').on('show.bs.modal', function (event) {
+
+                var button = $(event.relatedTarget)
+                var kode_transaksi = button.data('kode_transaksi')
+                var modal = $(this)
+
+                modal.find('.modal-body #kode_transaksi').val(kode_transaksi);
+            })
+
             $('#editKategori').on('show.bs.modal', function (event) {
 
                 var button = $(event.relatedTarget)

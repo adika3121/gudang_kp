@@ -22,8 +22,9 @@ class TbTransaksiController extends Controller
       $tampilTransaksi = tb_transaksi::with('tb_vendor', 'master')
                       ->get();
       $tb_outlet = tb_outlet::all();
+      $vendor=tb_vendor::all();
       // $tampilBRG = DB
-      return view('tampil_transaksi', compact('tampilTransaksi', 'tb_outlet'));
+      return view('tampil_transaksi', compact('tampilTransaksi', 'tb_outlet', 'vendor'));
   }
 
   /**
@@ -116,10 +117,13 @@ class TbTransaksiController extends Controller
    * @param  \App\tb_transaksi  $tb_vendor
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, tb_transaksi $tb_transaksi)
-  {
-      //
-  }
+   public function update(Request $request)
+   {
+       $transaksi = tb_transaksi::findOrFail($request->kode_transaksi);
+
+       $transaksi->update($request->all());
+       return back();
+   }
 
   /**
    * Remove the specified resource from storage.
@@ -127,8 +131,12 @@ class TbTransaksiController extends Controller
    * @param  \App\tb_transaksi  $tb_vendor
    * @return \Illuminate\Http\Response
    */
-  public function destroy(tb_transaksi $tb_transaksi)
-  {
-      //
-  }
+
+   public function destroy(Request $request)
+   {
+       $transaksi = tb_transaksi::findOrFail($request->kode_transaksi);
+       $transaksi->delete();
+
+       return back();
+   }
 }
