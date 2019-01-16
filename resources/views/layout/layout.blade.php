@@ -490,6 +490,17 @@
     @yield('script_sn')
     <script>
 
+            $('#editMaster').on('show.bs.modal', function (event) {
+
+                var button = $(event.relatedTarget)
+                var keterangan = button.data('keterangan')
+                var id_master = button.data('id_master')
+                var modal = $(this)
+
+                modal.find('.modal-body #keterangan').val(keterangan);
+                modal.find('.modal-body #id_master').val(id_master);
+            })
+
             $('#editKategori').on('show.bs.modal', function (event) {
 
                 var button = $(event.relatedTarget)

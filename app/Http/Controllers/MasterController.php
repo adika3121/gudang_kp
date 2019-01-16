@@ -103,28 +103,13 @@ class MasterController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $kode_master)
-    {
-        $this->validate($request,[
-          'nama_barang' => 'required'
-        ]);
+     public function update(Request $request)
+     {
+         $master = master::findOrFail($request->id_master);
 
-        $master = master::find($kode_master);
-        $outlet = $request->outlet;
-        $kode_pn = $request->kode_pn;
-        $nama_barang = $request->nama_barang;
-        $kode_master = $outlet . $kode_pn . $nama_barang;
-        $master->kode_outlet = $request->outlet;
-        $master->kategori = $request->kategori;
-        $master->kode_pn = $request->kode_pn;
-        $master->nama_barang = $request->nama_barang;
-        $master->merek = $request->merk;
-        $master->kode_master = $kode_master;
-        $master->keterangan = $request->keterangan;
-        $master->save();
-
-        return redirect("/");
-    }
+         $master->update($request->all());
+         return back();
+     }
 
     /**
      * Remove the specified resource from storage.
