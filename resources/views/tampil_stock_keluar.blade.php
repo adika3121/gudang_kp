@@ -26,7 +26,7 @@
                             <tbody>
                                 @foreach($stock_keluar as $stk_kluar)
                                 <tr>
-                                    <td>{{$stk_kluar->master['kode_master']}}</td>
+                                    <td>{{$stk_kluar->kode_master}}</td>
                                     <td>{{$stk_kluar->sn}}</td>
                                     <td>{{$stk_kluar->created_at}}</td>
                                     <td>{{$stk_kluar->keterangan}}</td>
