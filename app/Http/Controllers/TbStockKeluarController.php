@@ -56,16 +56,33 @@ class TbStockKeluarController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
+
+  public function simpan_transaksi_baru(Request $request){
+    foreach($request->input('sn')as $key => $value){
+      foreach($request->input('kode_master')as $key =>$value_master){
+        foreach($request->input('keterangan')as $key=>$value_keterangan){
+          tb_stock_keluar::create(['sn'=>$value],['kode_master'=>$value_master], ['keterangan'=>$value_keterangan]);
+        }
+      }
+
+
+    }
+    return redirect('/stock-keluar');
+  }
+
   public function store(Request $request)
   {
 
+      $nama_outlet = $request->outlet;
+      $kode_master = $request->kode_master;
+      $ket = $request->keterangan;
       $stock_out = new tb_stock_keluar();
       $stock_out->sn = $request->sn;
       $stock_out->kode_master = $request->kode_master;
       $stock_out->keterangan = $request->keterangan;
       $stock_out->save();
 
-      return redirect('/stock-keluar');
+      return view('sukses_stockKeluar', compact('nama_outlet', 'kode_master', 'ket'));
   }
 
   /**

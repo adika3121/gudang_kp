@@ -22,23 +22,22 @@
                       {{ csrf_field() }}
                       <table class="table table-borderless" id="dynamic_field">
                         <tr>
-                          <td><input type="text" id="kode_pn" name="sn" placeholder="Masukan Kode SN" class="form-control"></td>
+                          <td><input type="text" id="sn" name="sn" placeholder="Masukan Kode SN" class="form-control"></td>
                           <input type="hidden" id="outlet" name="outlet" value="{{$nama_outlet}}"placeholder="Kode PN" class="form-control">
                           <input type="hidden" id="kode_master" name="kode_master" value="{{$kode_master}}"placeholder="Kode PN" class="form-control">
                           <input type="hidden" id="keterangan" name="keterangan" value="{{$ket}}"placeholder="Kode PN" class="form-control">
-                          <!-- <td><button name"add" id="add" class="btn btn-warning">Tambah Kode SN</button></td> -->
+                          <!-- <td><button type="button" name"add" id="add" class="btn btn-warning add">Tambah Kode SN</button></td> -->
                         </tr>
                       </table>
 
                 </div>
                 <div class="card-footer">
-                    <button name="submit" id="submit_keluar"class="btn btn-primary btn-sm submit_keluar">
+                    <button type="submit" name="submit_keluar" id="submit_keluar" class="btn btn-primary btn-sm submit_keluar" data-toggle="modal" data-target="#konfirmStock">
                         <i class="fa fa-dot-circle-o"></i> Submit
                     </button>
                     <button type="reset" class="btn btn-danger btn-sm">
                         <i class="fa fa-ban"></i> Reset
                     </button>
-
                 </div>
                 </form>
               </div>
@@ -48,37 +47,12 @@
         </div>
       </div>
     </div>
+
+    
 @endsection
 
 @section('script_sn')
 <script>
-  // $(document).ready(function(){
-    // var postURL = ";
-  //   var i = 1;
-  //   $('#add').click(function(){
-  //     i++;
-  //     $('#dynamic_field').append('<tr id="row'+1+'"><td><input type="text" id="kode_pn" name="sn" placeholder="Masukan Kode SN" class="form-control"></td><input type="hidden" id="outlet" name="outlet" value="{{$nama_outlet}}"placeholder="Kode PN" class="form-control"><input type="hidden" id="kode_master" name="kode_master" value="{{$kode_master}}"placeholder="Kode PN" class="form-control"><input type="hidden" id="keterangan" name="keterangan" value="{{$ket}}"placeholder="Kode PN" class="form-control"><td><button name"remove" id="'+i+'" class="btn btn-danger btn_remove">Hapus</button></td></tr>');
-  //   });
-  //   $(document).on('click','btn_remove',function(){
-  //     var button_id = $(this).attr("id");
-  //     $("#row"+button_id+"").remove();
-  //   });
-  //   $.ajaxSetup({
-  //       headers: {
-  //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'
-  //       }
-  //     });
-  //   $(document).on('click','submit_keluar',function(){
-  //     $.ajax({
-  //       url:postURL,
-  //       method:"POST",
-  //       data:$('insert_sn').serialize(),
-  //       success:function (data) {
-  //         alert('data');
-  //         $('#insert_sn')[0].reset();
-  //       }
-  //     });
-  //   });
-  // });
+
 </script>
 @endsection
