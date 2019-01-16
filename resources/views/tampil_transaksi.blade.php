@@ -32,10 +32,20 @@
                                     <td>{{$tp_transaksi->tb_vendor['nama_vendor']}}</td>
                                     <td>{{$tp_transaksi->created_at}}</td>
                                     <td>{{$tp_transaksi->keterangan}}</td>
-                                    <td><a href="" class="btn btn-outline-warning">
-                                            <i class="fa fa-edit"></i></a>
-                                            <a href="" class="btn btn-outline-danger">
-                                                    <i class="fa fa-trash"></i></a></td>
+                                    <td><button class="btn btn-outline-warning"
+                                          data-toggle="modal"
+                                          data-target="#editTransaksi"
+                                          data-keterangan_transaksi="{{$tp_transaksi->keterangan}}"
+                                          data-vendor_transaksi="{{$tp_transaksi->vendor}}"
+                                          data-kode_transaksi={{$tp_transaksi->kode_transaksi}}>
+                                            <i class="fa fa-edit"></i></button>
+
+                                          <button class="btn btn-danger"
+                                          data-toggle="modal"
+                                          data-target="#deleteTransaksi"
+                                          data-kode_transaksi={{$tp_transaksi->kode_transaksi}}
+                                          ><i class="fa fa-trash"></i></button>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -99,4 +109,73 @@
           			</div>
           			<!-- end modal large -->
 
+                <!-- modal update -->
+                <div class="modal fade" id="editTransaksi" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="largeModalLabel">Edit Catatan</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{{route('transaksi.update','test')}}" method="post" class="">
+                                    {{method_field('patch')}}
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label for="vendor" class=" form-control-label">Nama Vendor</label>
+                                        <input type="hidden" id="kode_transaksi" name="kode_transaksi" value="">
+                                        <select name="vendor" id="vendor" class="form-control">
+                                        <@if(count($vendor->all()) > 0)
+                                            @foreach($vendor->all() as $vnd)
+                                                <option value="{{$vnd->kode_vendor}}">{{$vnd->nama_vendor}}</option>
+                                            @endforeach
+                                        @endif
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="keterangan" class=" form-control-label">Catatan</label>
+                                        <input type="hidden" id="kode_transaksi" name="kode_transaksi" value="">
+                                        <input type="text" id="keterangan" name="keterangan" class="form-control">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Simpan
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          			<!-- end modal large -->
+
+                {{-- Modal delete transaksi --}}
+                <div class="modal fade" id="deleteTransaksi" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="largeModalLabel">Delete Transaksi</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{route('transaksi.destroy','test')}}" method="post">
+                                        {{method_field('delete')}}
+                                        {{csrf_field()}}
+                                        <p class="text-center">
+                                            Are you sure you want to delete this?
+                                        </p>
+                                        <input type="hidden" id="kode_transaksi" name="kode_transaksi" value="">
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
+                                            <button type="submit" class="btn btn-warning">Yes, Delete</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 @endsection

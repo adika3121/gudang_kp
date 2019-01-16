@@ -49,8 +49,11 @@
                                                       data-keterangan="{{$tp_brg->keterangan}}"
                                                       data-id_master={{$tp_brg->id_master}}>
                                                         <i class="fa fa-edit"></i></button>
-                                                        <a href="" class="btn btn-outline-danger">
-                                                                <i class="fa fa-trash"></i></a></td>
+                                                    <button class="btn btn-danger"
+                                                        data-toggle="modal"
+                                                        data-target="#deleteMaster"
+                                                        data-id_master={{$tp_brg->id_master}}
+                                                        ><i class="fa fa-trash"></i></button>
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -194,6 +197,34 @@
           </div>
       </div>
 			<!-- end modal large -->
+
+      {{-- Modal delete master --}}
+      <div class="modal fade" id="deleteMaster" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="largeModalLabel">Delete Barang</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <form action="{{route('master.destroy','test')}}" method="post">
+                              {{method_field('delete')}}
+                              {{csrf_field()}}
+                              <p class="text-center">
+                                  Are you sure you want to delete this?
+                              </p>
+                              <input type="hidden" id="id_master" name="id_master" value="">
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-success" data-dismiss="modal">No, Cancel</button>
+                                  <button type="submit" class="btn btn-warning">Yes, Delete</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
 
 

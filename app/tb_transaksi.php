@@ -17,5 +17,8 @@ class tb_transaksi extends Model
       return $this->belongsTo('App\tb_vendor', 'vendor');
     }
 
+    protected $fillable = [
+       'kode_transaksi', 'kode_master', 'sn', 'vendor', 'tgl_masuk', 'keterangan'
+    ];
 
 }
