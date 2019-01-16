@@ -487,26 +487,7 @@
             });
         });
     </script>
-
-    <script>
-
-      $(document).ready(function(){
-        var i = 1;
-        $('#add').click(function(){
-          i++;
-          $('#dynamic_field').append('<tr id="row'+1+'"><td><input type="text" id="kode_pn" name="sn" placeholder="Masukan Kode SN" class="form-control"></td><td><button name"remove" id="'+i+'" class="btn btn-danger">Hapus</button></td></tr>');
-        });
-        $(document).on('click','btn_remove',function(){
-          var button_id = $(this).attr("id");
-          $("#row"+button_id+"").remove();
-        });
-        // $('#submit').click(function(){
-        //   $.ajax({
-        //     url:"{{}}"
-        //   });
-        // });
-      });
-    </script>
+    @yield('script_sn')
     <script>
 
             $('#editMaster').on('show.bs.modal', function (event) {

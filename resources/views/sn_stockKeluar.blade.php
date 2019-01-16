@@ -16,31 +16,23 @@
                   <i class="mr-2 fa fa-align-justify"></i>
                   <strong class="card-title" v-if="headerText">Kode SN</strong>
                 </div>
-                <form action="{{action('TbStockKeluarController@store')}}" method="post" class="form-horizontal">
+                <form action="{{action('TbStockKeluarController@store')}}" method="post" name="insert_sn" class="form-horizontal" id="insert_sn">
                 <div class="card-body">
 
                       {{ csrf_field() }}
-
-                      <input type="hidden" id="kode_pn" name="outlet" value="{{$nama_outlet}}"placeholder="Kode PN" class="form-control">
-                      <input type="hidden" id="kode_pn" name="outlet" value="{{$kode_master}}"placeholder="Kode PN" class="form-control">
-                      <input type="hidden" id="kode_pn" name="outlet" value="{{$ket}}"placeholder="Kode PN" class="form-control">
                       <table class="table table-borderless" id="dynamic_field">
                         <tr>
                           <td><input type="text" id="kode_pn" name="sn" placeholder="Masukan Kode SN" class="form-control"></td>
-                          <td><button name"add" id="add" class="btn btn-warning">Tambah Kode SN</button></td>
+                          <input type="hidden" id="outlet" name="outlet" value="{{$nama_outlet}}"placeholder="Kode PN" class="form-control">
+                          <input type="hidden" id="kode_master" name="kode_master" value="{{$kode_master}}"placeholder="Kode PN" class="form-control">
+                          <input type="hidden" id="keterangan" name="keterangan" value="{{$ket}}"placeholder="Kode PN" class="form-control">
+                          <!-- <td><button name"add" id="add" class="btn btn-warning">Tambah Kode SN</button></td> -->
                         </tr>
                       </table>
-                      <div class="row form-group">
-                          <div class="col col-md-3">
-                              <label for="sn" class=" form-control-label">Kode Serial Number</label>
-                          </div>
-                          <div class="col-12 col-md-9">
-                              <input type="text" id="kode_pn" name="sn" placeholder="Masukan Kode SN" class="form-control">
-                          </div>
-                      </div>
+
                 </div>
                 <div class="card-footer">
-                    <button type="submit" name="suubmit" class="btn btn-primary btn-sm">
+                    <button name="submit" id="submit_keluar"class="btn btn-primary btn-sm submit_keluar">
                         <i class="fa fa-dot-circle-o"></i> Submit
                     </button>
                     <button type="reset" class="btn btn-danger btn-sm">
@@ -58,6 +50,35 @@
     </div>
 @endsection
 
-@section(script_sn)
-
+@section('script_sn')
+<script>
+  // $(document).ready(function(){
+    // var postURL = ";
+  //   var i = 1;
+  //   $('#add').click(function(){
+  //     i++;
+  //     $('#dynamic_field').append('<tr id="row'+1+'"><td><input type="text" id="kode_pn" name="sn" placeholder="Masukan Kode SN" class="form-control"></td><input type="hidden" id="outlet" name="outlet" value="{{$nama_outlet}}"placeholder="Kode PN" class="form-control"><input type="hidden" id="kode_master" name="kode_master" value="{{$kode_master}}"placeholder="Kode PN" class="form-control"><input type="hidden" id="keterangan" name="keterangan" value="{{$ket}}"placeholder="Kode PN" class="form-control"><td><button name"remove" id="'+i+'" class="btn btn-danger btn_remove">Hapus</button></td></tr>');
+  //   });
+  //   $(document).on('click','btn_remove',function(){
+  //     var button_id = $(this).attr("id");
+  //     $("#row"+button_id+"").remove();
+  //   });
+  //   $.ajaxSetup({
+  //       headers: {
+  //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'
+  //       }
+  //     });
+  //   $(document).on('click','submit_keluar',function(){
+  //     $.ajax({
+  //       url:postURL,
+  //       method:"POST",
+  //       data:$('insert_sn').serialize(),
+  //       success:function (data) {
+  //         alert('data');
+  //         $('#insert_sn')[0].reset();
+  //       }
+  //     });
+  //   });
+  // });
+</script>
 @endsection
