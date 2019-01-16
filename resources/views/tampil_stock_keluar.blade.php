@@ -13,7 +13,7 @@
                 <div style="width:100%;">
                     <h2 class="title-1 m-b-25">Stock Barang Keluar</h2>
                     <div class="table-responsive table--no-card m-b-20">
-                        <table class="table table-borderless table-striped table-earning">
+                        <table class="table table-borderless table-striped table-earning" id="keluartable">
                             <thead>
                                 <tr>
                                     <th>Kode Master</th>

@@ -47,7 +47,7 @@
                                                       data-toggle="modal"
                                                       data-target="#editMaster"
                                                       data-keterangan="{{$tp_brg->keterangan}}"
-                                                      data-kode_master={{$tp_brg->kode_master}}>
+                                                      data-id_master={{$tp_brg->id_master}}>
                                                         <i class="fa fa-edit"></i></button>
                                                         <a href="" class="btn btn-outline-danger">
                                                                 <i class="fa fa-trash"></i></a></td>
@@ -180,7 +180,7 @@
                           {{ csrf_field() }}
                           <div class="form-group">
                               <label for="keterangan" class=" form-control-label">Catatan</label>
-                              <input type="hidden" id="kode_master" name="kode_master" value="">
+                              <input type="hidden" id="id_master" name="id_master" value="">
                               <input type="text" id="keterangan" name="keterangan" class="form-control">
                           </div>
                           <div class="modal-footer">

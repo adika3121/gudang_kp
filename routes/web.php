@@ -24,10 +24,11 @@ Route::resource('/master', 'MasterController');
 Route::get('/tambah-barang', 'MasterController@create')->name('tambahbarang');
 Route::post('/tambah-stock','TbTransaksiController@outlet');
 Route::post('/tambah-stock-keluar', 'TbStockKeluarController@tambah_stock_keluar');
+Route::post('/tambah-stock-keluar-sn', 'TbStockKeluarController@tambah_sn_keluar');
 // Route::get('/transaksi', 'TbTransaksiController@create')->name('transaksi');
 
 Route::get('/tesTampil', function () {
-    return view('tampil_stock_keluar');
+    return view('sn_stockKeluar');
 });
 
 Auth::routes();

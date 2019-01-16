@@ -469,27 +469,56 @@
     <!-- Main JS-->
     <script src="js/main.js"></script>
     <script>
+
         $(function() {
             $('#mastertable').DataTable({
                 scrollX : true,
                 scrollCollapse : true
             });
+            $('#transaksitable').DataTable({
+                scrollX : true,
+                scrollCollapse : true,
+                "autoWidth": false
+            });
+            $('#keluartable').DataTable({
+                scrollX : true,
+                scrollCollapse : true,
+                "autoWidth": false
+            });
         });
     </script>
 
     <script>
-    $('#editMaster').on('show.bs.modal', function (event) {
 
-        var button = $(event.relatedTarget)
-        var keterangan = button.data('keterangan')
-        var kode_master = button.data('kode_master')
-        var modal = $(this)
+      $(document).ready(function(){
+        var i = 1;
+        $('#add').click(function(){
+          i++;
+          $('#dynamic_field').append('<tr id="row'+1+'"><td><input type="text" id="kode_pn" name="sn" placeholder="Masukan Kode SN" class="form-control"></td><td><button name"remove" id="'+i+'" class="btn btn-danger">Hapus</button></td></tr>');
+        });
+        $(document).on('click','btn_remove',function(){
+          var button_id = $(this).attr("id");
+          $("#row"+button_id+"").remove();
+        });
+        // $('#submit').click(function(){
+        //   $.ajax({
+        //     url:"{{}}"
+        //   });
+        // });
+      });
+    </script>
+    <script>
 
-        modal.find('.modal-body #keterangan').val(keterangan);
-        modal.find('.modal-body #kode_master').val(kode_master);
+            $('#editMaster').on('show.bs.modal', function (event) {
 
-    });
+                var button = $(event.relatedTarget)
+                var keterangan = button.data('keterangan')
+                var id_master = button.data('id_master')
+                var modal = $(this)
 
+                modal.find('.modal-body #keterangan').val(keterangan);
+                modal.find('.modal-body #id_master').val(id_master);
+            })
 
             $('#editKategori').on('show.bs.modal', function (event) {
 

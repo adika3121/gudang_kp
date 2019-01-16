@@ -30,25 +30,6 @@ class MasterController extends Controller
     }
 
 
-
-    public function merk()
-    {
-        $tampilMerk = tb_merek::all();
-        return view('tambah_merk', compact('tampilMerk'));
-    }
-
-    public function vendor()
-    {
-         $tampilVendor = tb_vendor::all();
-         return view('tambah_vendor', compact('tampilVendor'));
-    }
-    public function outlet()
-    {
-        $tampilOutlet = tb_outlet::all();
-
-        return view('tambah_outlet', compact('tampilOutlet'));
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -124,7 +105,7 @@ class MasterController extends Controller
      */
      public function update(Request $request)
      {
-         $master = master::findOrFail($request->kode_master);
+         $master = master::findOrFail($request->id_master);
 
          $master->update($request->all());
          return back();
