@@ -24,7 +24,8 @@
                         <tr>
                           <td><input type="text" id="sn" name="sn" placeholder="Masukan Kode SN" class="form-control"></td>
                           <input type="hidden" id="outlet" name="outlet" value="{{$nama_outlet}}"placeholder="Kode PN" class="form-control">
-                          <input type="hidden" id="kode_master" name="kode_master" value="{{$kode_master}}"placeholder="Kode PN" class="form-control">
+                          <input  id="id_master" name="id_master" value="{{$id_master}}"placeholder="Kode PN" class="form-control">
+                          <input  id="kode_master" name="kode_master" value="{{$kode_master}}"placeholder="Kode PN" class="form-control">
                           <input type="hidden" id="keterangan" name="keterangan" value="{{$ket}}"placeholder="Kode PN" class="form-control">
                           <!-- <td><button type="button" name"add" id="add" class="btn btn-warning add">Tambah Kode SN</button></td> -->
                         </tr>
@@ -48,7 +49,7 @@
       </div>
     </div>
 
-    
+
 @endsection
 
 @section('script_sn')

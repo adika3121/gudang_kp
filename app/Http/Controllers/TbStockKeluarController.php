@@ -29,16 +29,20 @@ class TbStockKeluarController extends Controller
    public function tambah_stock_keluar(Request $request){
      $nama_outlet = $request->outlet;
      $nama_barang = master::where('kode_outlet', $nama_outlet)
-                   -> select('tb_master.kode_master as kode_master', 'tb_master.nama_barang as nama_barang')
+                   -> select('tb_master.id_master as id_master','tb_master.kode_master as kode_master', 'tb_master.nama_barang as nama_barang')
                    -> get();
      return view('tambah_stock_keluar', compact('nama_barang','nama_outlet'));
    }
 
    public function tambah_sn_keluar(Request $request){
      $nama_outlet = $request->outlet;
-     $kode_master = $request->kode_master;
+     $id_master = $request->id_master;
+     $kk_master = master::where('id_master', $id_master)
+                   ->select('tb_master.kode_master as kode_master')
+                   ->first();
+     $kode_master = $kk_master->kode_master;
      $ket = $request->keterangan;
-     return view('sn_stockKeluar', compact('nama_outlet', 'kode_master', 'ket'));
+     return view('sn_stockKeluar', compact('nama_outlet', 'kode_master', 'ket', 'id_master'));
    }
 
   public function create(Request $request)
@@ -57,22 +61,25 @@ class TbStockKeluarController extends Controller
    * @return \Illuminate\Http\Response
    */
 
-  public function simpan_transaksi_baru(Request $request){
-    foreach($request->input('sn')as $key => $value){
-      foreach($request->input('kode_master')as $key =>$value_master){
-        foreach($request->input('keterangan')as $key=>$value_keterangan){
-          tb_stock_keluar::create(['sn'=>$value],['kode_master'=>$value_master], ['keterangan'=>$value_keterangan]);
-        }
-      }
-
-
-    }
-    return redirect('/stock-keluar');
-  }
+  // public function simpan_transaksi_baru(Request $request){
+  //   foreach($request->input('sn')as $key => $value){
+  //     foreach($request->input('kode_master')as $key =>$value_master){
+  //       foreach($request->input('keterangan')as $key=>$value_keterangan){
+  //         tb_stock_keluar::create(['sn'=>$value],['kode_master'=>$value_master], ['keterangan'=>$value_keterangan]);
+  //       }
+  //     }
+  //
+  //
+  //   }
+  //   return redirect('/stock-keluar');
+  // }
 
   public function store(Request $request)
   {
-
+      $id_master = $request->id_master;
+      $kk_master = master::where('id_master', $id_master)
+                    ->select('tb_master.kode_master as kode_master')
+                    ->first();
       $nama_outlet = $request->outlet;
       $kode_master = $request->kode_master;
       $ket = $request->keterangan;
@@ -82,7 +89,13 @@ class TbStockKeluarController extends Controller
       $stock_out->keterangan = $request->keterangan;
       $stock_out->save();
 
-      return view('sukses_stockKeluar', compact('nama_outlet', 'kode_master', 'ket'));
+      $master = master::find($id_master);
+      $out_stock = tb_stock_keluar::where('kode_master', $kode_master)
+                    ->count();
+      $master->stock_keluar = $out_stock;
+      $master->save();
+
+      return view('sukses_stockKeluar', compact('nama_outlet', 'kode_master', 'ket', 'id_master'));
   }
 
   /**

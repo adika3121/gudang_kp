@@ -27,10 +27,10 @@
                               <label for="kode_master" class=" form-control-label">Nama Barang</label>
                           </div>
                           <div class="col-12 col-md-9">
-                              <select name="kode_master" id="#" class="form-control">
+                              <select name="id_master" id="#" class="form-control">
                                   <@if(count($nama_barang->all()) > 0)
                                       @foreach($nama_barang->all() as $brg)
-                                          <option value="{{$brg->kode_master}}">{{$brg->nama_barang}}</option>
+                                          <option value="{{$brg->id_master}}">{{$brg->nama_barang}}</option>
                                       @endforeach
                               @endif
                               </select>

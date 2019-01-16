@@ -20,6 +20,7 @@
                 <div class="card-body">
                     {{csrf_field()}}
                     <input type="hidden" id="outlet" name="outlet" value="{{$nama_outlet}}"placeholder="Kode PN" class="form-control">
+                    <input type="hidden" id="id_master" name="id_master" value="{{$id_master}}"placeholder="Kode PN" class="form-control">
                     <input type="hidden" id="kode_master" name="kode_master" value="{{$kode_master}}"placeholder="Kode PN" class="form-control">
                     <input type="hidden" id="keterangan" name="keterangan" value="{{$ket}}"placeholder="Kode PN" class="form-control">
                     <p class="text-center">

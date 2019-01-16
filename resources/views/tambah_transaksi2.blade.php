@@ -14,7 +14,7 @@
             <div class="card">
               <div class="card-header">
                 <i class="mr-2 fa fa-align-justify"></i>
-                <strong class="card-title" v-if="headerText">Modals</strong>
+                <strong class="card-title" v-if="headerText">Tambah Stock Keluar</strong>
               </div>
               <div class="card-body">
                 <form action="{{action('TbTransaksiController@store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
